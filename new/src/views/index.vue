@@ -3,7 +3,7 @@
         <div class="echartsTest">
         
         </div>
-        <div class="timeTest">
+        <div class="timeTest" v-if="!showTime">
             <time-Test></time-Test>
         </div>
     </div>
@@ -12,9 +12,15 @@
 <script>
 import timeTest from './home/timeTest.vue'
 export default {
+    data(){
+        return{
+            shwoTime: true
+        }
+    },
     components: {
         timeTest
     }
+
 }
 </script>
 
