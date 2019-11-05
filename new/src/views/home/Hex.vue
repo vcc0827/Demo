@@ -42,6 +42,7 @@ export default {
         series: [
           {
             type: 'radar',
+            areaStyle: {},
             data: [
               {
                 value: [5, 5, 5, 5, 5, 5],
