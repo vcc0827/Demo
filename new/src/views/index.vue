@@ -1,11 +1,12 @@
 <template>
     <div>
+        <div class="tittle">work area ↓</div>
         <div class="echartsTest">
         <hex-chart></hex-chart>
         </div>
-        <div class="timeTest" v-if="!showTime">
-            <!-- <time-Test></time-Test> -->
-        </div>
+        <!-- <div class="timeTest" v-if="!showTime">
+            <time-Test></time-Test>
+        </div> -->
     </div>
 </template>
 
@@ -27,5 +28,8 @@ export default {
 </script>
 
 <style scoped>
-
+.tittle{
+    font-size: 2em;
+    color: aqua
+}
 </style>
