@@ -1,0 +1,9 @@
+{
+  "person": [
+    { "name": "tom", "age": "21" },
+    { "name": "jack", "age": "34" },
+    { "name": "joy", "age": "25" },
+    { "name": "hex", "age": "13" },
+    { "name": "terri", "age": "50" }
+  ]
+}

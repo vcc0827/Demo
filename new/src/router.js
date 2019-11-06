@@ -15,10 +15,10 @@ export default new Router({
       name: 'Hex',
       component: resolve => require(['./views/home/Hex.vue'], resolve)
     },
-    // {
-    //   path: '/cop',
-    //   name: 'cop',
-    //   component: resolve => require(['./views/home/cop.vue'], resolve)
-    // }
+    {
+      path: '/jsons',
+      name: 'Jsons',
+      component: resolve => require(['./views/home/jsons.vue'], resolve)
+    }
   ]
 })

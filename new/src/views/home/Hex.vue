@@ -21,7 +21,7 @@ export default {
       option2: {},
       option3: {},
       data: ['马龙', '张继科', '樊振东', '水谷隼'],
-      flag: 0
+      flag: 0,
     }
   },
   methods: {
@@ -30,6 +30,14 @@ export default {
         title: { text: '六边形雷达图' },
         tooltip: { trigger: 'axis' },
         legend: { x: 'center', data: ['马龙', '张继科', '樊振东', '水谷隼'] },
+        grid: { containLabel: false },
+        splitNumber: 5, 
+        axisLine: { show: true, lineStyle: { color: (255, 255, 255) } },
+        spliteLine: {        
+            show: true, lineStyle: {
+            width: 1,
+            color: 'red' // 图表背景网格线的颜色
+          }        },
         radar: [
           {
             indicator: [
@@ -73,6 +81,7 @@ export default {
         title: { text: '六边形雷达图' },
         tooltip: { trigger: 'axis' },
         legend: { x: 'center', data: ['马龙', '张继科', '樊振东', '水谷隼'] },
+        grid: { containLabel: true },
         radar: [
           {
             indicator: [
@@ -116,6 +125,7 @@ export default {
         title: { text: '六边形雷达图' },
         tooltip: { trigger: 'axis' },
         legend: { x: 'center', data: ['马龙', '张继科', '樊振东', '水谷隼'] },
+        grid: { containLabel: true },
         radar: [
           {
             indicator: [
@@ -159,6 +169,7 @@ export default {
         title: { text: '六边形雷达图' },
         tooltip: { trigger: 'axis' },
         legend: { x: 'center', data: ['马龙', '张继科', '樊振东', '水谷隼'] },
+        grid: { containLabel: true },
         radar: [
           {
             indicator: [
@@ -200,11 +211,9 @@ export default {
       }
     },
     switcher() {
-      // this.isShow = !this.isShow
-      if (this.flag == 3) this.flag = 0
       this.flag++
-      console.log(this.flag)
-      
+      console.log(this.flag - 1)
+      if (this.flag > 3) this.flag = 0
     }
   },
   mounted() {
