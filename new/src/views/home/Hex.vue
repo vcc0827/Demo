@@ -48,7 +48,7 @@ export default {
               { name: '技术', max: 5 },
               { name: '速度', max: 5 }
             ],
-            radius: 150,
+            radius: 50,
             center: ['50%', '50%'],
           }
         ],

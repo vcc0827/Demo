@@ -2,13 +2,13 @@
   <div>
     <span class="tittle">work area ↓</span>
     <div class="test-area">
-      <div class="time-test" v-if="!showEcharts">
+      <div class="time-test">
         <time-Test></time-Test>
       </div>
-      <div class="echarts-test" v-else>
+      <div class="echarts-test">
         <hex-chart></hex-chart>
-
       </div>
+
     </div>
   </div>
 </template>
@@ -36,7 +36,7 @@ export default {
   font-size: 2em;
   color: black;
   text-align: center;
-  background: url('../assets/menu.png') no-repeat;
+  // background: url('../assets/menu.png') no-repeat;
 }
 .test-area {
   display: flex;
