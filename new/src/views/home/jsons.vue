@@ -39,17 +39,17 @@ export default {
   },
   methods: {
     async loadPersonInfo() {
-      let res = await this.axios('/json/info.json').then(data => data.data)
+      let res = await this.axios('/json/info.json').then(res => res.data)
       this.personList = res.person
       console.log('personList:', this.personList)
     },
     async loadProducts() {
-      let res = await this.axios.get('https://api.myjson.com/bins/74l63').then(data => data.data)
+      let res = await this.axios.get('https://api.myjson.com/bins/74l63').then(res => res.data)
       this.productsList = res.products
       console.log('products:', this.productsList)
     },
     async loadBooks() {
-      let res = await this.axios('/json/mix.json').then(data => data.data)
+      let res = await this.axios('/json/mix.json').then(res => res.data)
       this.booksJson = res.mix
       console.log('books:', this.booksJson)
     }
