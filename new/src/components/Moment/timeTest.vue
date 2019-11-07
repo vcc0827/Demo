@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="time-set">
     <h1>moment计时器</h1>
     <div class="today">今天是：{{time}}</div>
     <div>
@@ -15,6 +15,11 @@
     </div>
     <div class="thatDay">那天是：{{timer}}</div>
     <button @click="change">submit</button>
+    <br />
+    <br />
+    <div class="close" @click="closeMoment">
+      <button>close</button>
+    </div>
   </div>
 </template>
 
@@ -36,6 +41,10 @@ export default {
     change() {
       this.startTime = this.$refs.getDate.value
       this.days = this.$refs.getdays.value
+    },
+    closeMoment(){
+      this.$emit('closeMoment')
+      console.log('timetest close!')
     }
   },
   async mounted() {
@@ -49,3 +58,10 @@ export default {
   }
 }
 </script>
+
+<style lang="less" scoped>
+.time-set{
+   width: 100%;
+  height: 100%;
+}
+</style>

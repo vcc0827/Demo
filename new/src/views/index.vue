@@ -1,59 +1,75 @@
 <template>
-  <div>
-    <span class="tittle">work area ↓</span>
-    <div class="test-area">
-      <div class="time-test">
-        <time-Test></time-Test>
-      </div>
-      <div class="echarts-test">
-        <hex-chart></hex-chart>
-      </div>
-      <div class="time-test" v-if="showSVG">
-        <mySVG @closeSVG='closeSVG'></mySVG>
-      </div>
+  <div class="main-page">
+    <div class="left">
+      <router-link to="moment">
+        <button>To Moment</button>
+      </router-link>
     </div>
+    <div class="middle">
+      <router-link to="jsons">
+        <button>To Jsons</button>
+      </router-link>
+    </div>
+    <div class="right">
+      <!-- <MyHex></MyHex> -->
+      <router-link to="hex">
+        <button>To Hex</button>
+      </router-link>
+    </div>
+
+    <!-- hidden part -->
+    <div class="planB"></div>
   </div>
 </template>
 
 <script>
-import timeTest from './home/timeTest.vue'
-import hexChart from './home/Hex.vue'
-import mySVG from './home/SVG.vue'
+import MyTime from '../components/Moment/timeTest'
+import MyJson from '../components/Jsons/jsons'
+import MyHex from '../components/Hex/Hex'
+
 export default {
   data() {
     return {
-      showEcharts: true,
-      showSVG: false
+      momentShow: false,
+
     }
   },
   components: {
-    timeTest,
-    hexChart,
-    mySVG
+
+    // MyTime,
+    // MyJson,
+    // MyHex,
   },
   methods: {
-    closeSVG(){
-      this.showSVG = true
-    }
+    clickMoment() {
+      this.momentShow = true
+      console.log('clicked!')
+      console.log(this.momentShow)
+    },
+    closeMoment() {
+      this.momentShow = false
+      console.log('closed!')
+    },
+    hrefjsons() {
+      this.$router.push({ path: '../component/Jsons/jsons' })
+    },
+    hrefmoment() {
+      this.$router.push({ path: '../component/Moment/timeTest' })
+    },
+    hrefhex() {
+      this.$router.push({ path: '../component/Hex/Hex' })
+    },
   }
-
 }
 </script>
 
-<style scoped lang="less">
-.tittle {
-  font-size: 2em;
-  color: black;
-  text-align: center;
-  // background: url('../assets/menu.png') no-repeat;
+<style lang="less" scoped>
+.show {
+  transform-origin: left top;
+  transform: scaleX(0.333333) scaleY(0.333333);
 }
-.test-area {
-  display: flex;
-  .echarts-test {
-    display: flex;
-  }
-  .time-test {
-    height: 400px;
-  }
+.hide {
+  width: 1920px;
+  height: 1080px;
 }
 </style>
