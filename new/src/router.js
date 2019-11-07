@@ -17,8 +17,13 @@ export default new Router({
     },
     {
       path: '/jsons',
-      name: 'Jsons',
+      name: 'jsons',
       component: resolve => require(['./views/home/jsons.vue'], resolve)
+    },
+    {
+      path: '/energy',
+      name: 'energy',
+      component: resolve => require(['./views/home/energyBar.vue'],resolve)
     }
   ]
 })
