@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <title>new</title>
+  </head>
+  <body>
+    <div>
+      <div class="questions">
+        1.主页面 A 内由组件 B 构成的部分中有一个组件 C，点击后显示组件 C
+        的页面。组件 B 的组件 C 的页面为什么可以超出主页面中组件部分的大小？
+      </div>
+    </div>
+    <div>
+      答：组件 C 页面绝对定位加设置宽高就可以实现。
+    </div>
+    <div>2.$route和$router 的区别？</div>
+    <div>
+      答：$router 传参 $route 接收参数 
+      query 方式： 
+      传参: this.$router.push({
+      path:'/xxx' query:{ id:id } }) 接收参数: this.$route.query.id params 方式:
+      this.$router.push({ name:'xxx' params:{ id:id } }) 接收参数:
+      this.$route.params.id
+    </div>
+  </body>
+</html>
