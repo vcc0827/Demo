@@ -25,7 +25,7 @@
 <script>
 import MyTime from '../components/Moment/timeTest'
 import MyJson from '../components/Jsons/jsons'
-import MyHex from '../components/Hex/Hex'
+import MyHex from '../components/Echarts/Hex/Hex'
 
 export default {
   data() {
@@ -57,7 +57,7 @@ export default {
       this.$router.push({ path: '../component/Moment/timeTest' })
     },
     hrefhex() {
-      this.$router.push({ path: '../component/Hex/Hex' })
+      this.$router.push({ path: '../component/Echarts/Hex/Hex' })
     },
   }
 }

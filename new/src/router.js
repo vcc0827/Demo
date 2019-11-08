@@ -18,7 +18,7 @@ export default new Router({
     {
       path: '/hex',
       name: 'Hex',
-      component: resolve => require(['./components/Hex/Hex.vue'], resolve)
+      component: resolve => require(['./components/Echarts/Hex/Hex.vue'], resolve)
     },
     {
       path: '/jsons',

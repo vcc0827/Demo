@@ -1,18 +1,17 @@
 <template>
   <!-- 雷达图 -->
   <div class="container">
-    <button @click="switcher">switcher</button>
     <div class="hex-box" v-echarts="option" v-if="this.data[this.flag]==data[0]"></div>
     <div class="hex-box" v-echarts="option1" v-else-if="this.data[this.flag]==data[1]"></div>
     <div class="hex-box" v-echarts="option2" v-else-if="this.data[this.flag]==data[2]"></div>
     <div class="hex-box" v-echarts="option3" v-else-if="this.data[this.flag]==data[3]"></div>
+    <button @click="switcher" class="center">切换运动员</button>
   </div>
 </template>
 
 <script>
 
 export default {
-
   data() {
     return {
       isShow: false,
@@ -31,10 +30,10 @@ export default {
         tooltip: { trigger: 'axis' },
         legend: { x: 'center', data: ['马龙', '张继科', '樊振东', '水谷隼'] },
         grid: { containLabel: false },
-        splitNumber: 5, 
+        splitNumber: 5,
         axisLine: { show: true, lineStyle: { color: (255, 255, 255) } },
-        spliteLine: {        
-            show: true, lineStyle: {
+        spliteLine: {
+          show: true, lineStyle: {
             width: 1,
             color: 'red' // 图表背景网格线的颜色
           }        },
@@ -61,18 +60,6 @@ export default {
                 value: [5, 5, 5, 5, 5, 5],
                 name: '马龙'
               },
-              // {
-              //   value: [5, 5, 4, 5, 5, 5],
-              //   name: '张继科'
-              // },
-              // {
-              //   value: [5, 5, 5, 2, 5, 3],
-              //   name: '樊振东'
-              // },
-              // {
-              //   value: [4, 5, 5, 3, 5, 5],
-              //   name: '水谷隼'
-              // }
             ]
           }
         ]
@@ -92,7 +79,7 @@ export default {
               { name: '技术', max: 5 },
               { name: '速度', max: 5 }
             ],
-            radius: 150,
+            radius: 50,
             center: ['50%', '50%'],
           }
         ],
@@ -101,22 +88,10 @@ export default {
             type: 'radar',
             areaStyle: {},
             data: [
-              // {
-              //   value: [5, 5, 5, 5, 5, 5],
-              //   name: '马龙'
-              // },
               {
                 value: [5, 5, 4, 5, 5, 5],
                 name: '张继科'
               },
-              // {
-              //   value: [5, 5, 5, 2, 5, 3],
-              //   name: '樊振东'
-              // },
-              // {
-              //   value: [4, 5, 5, 3, 5, 5],
-              //   name: '水谷隼'
-              // }
             ]
           }
         ]
@@ -136,7 +111,7 @@ export default {
               { name: '技术', max: 5 },
               { name: '速度', max: 5 }
             ],
-            radius: 150,
+            radius: 50,
             center: ['50%', '50%'],
           }
         ],
@@ -145,22 +120,10 @@ export default {
             type: 'radar',
             areaStyle: {},
             data: [
-              // {
-              //   value: [5, 5, 5, 5, 5, 5],
-              //   name: '马龙'
-              // },
-              // {
-              //   value: [5, 5, 4, 5, 5, 5],
-              //   name: '张继科'
-              // },
               {
                 value: [5, 5, 5, 2, 5, 3],
                 name: '樊振东'
               },
-              // {
-              //   value: [4, 5, 5, 3, 5, 5],
-              //   name: '水谷隼'
-              // }
             ]
           }
         ]
@@ -180,7 +143,7 @@ export default {
               { name: '技术', max: 5 },
               { name: '速度', max: 5 }
             ],
-            radius: 150,
+            radius: 50,
             center: ['50%', '50%'],
           }
         ],
@@ -189,18 +152,6 @@ export default {
             type: 'radar',
             areaStyle: {},
             data: [
-              // {
-              //   value: [5, 5, 5, 5, 5, 5],
-              //   name: '马龙'
-              // },
-              // {
-              //   value: [5, 5, 4, 5, 5, 5],
-              //   name: '张继科'
-              // },
-              // {
-              //   value: [5, 5, 5, 2, 5, 3],
-              //   name: '樊振东'
-              // },
               {
                 value: [4, 5, 5, 3, 5, 5],
                 name: '水谷隼'
@@ -225,9 +176,13 @@ export default {
 
 <style scoped lang="less">
 .container {
+  display: flex;
   .hex-box {
-    width: 800px;
-    height: 600px;
+    width: 400px;
+    height: 300px;
+  }
+  .center{
+    justify-content: center
   }
 }
 </style>
