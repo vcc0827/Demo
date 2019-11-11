@@ -29,6 +29,11 @@ export default new Router({
       path: '/energy',
       name: 'energy',
       component: resolve => require(['./components/EnergyBar/energyBar.vue'],resolve)
+    },
+    {
+      path: '/left',
+      name: 'left',
+      component: resolve => require(['./components/Left.vue'],resolve)
     }
   ]
 })

@@ -16,7 +16,10 @@
         <button>To Hex</button>
       </router-link>
     </div>
-
+    <div>
+      <div>this is "..." :</div>
+      <div>this is "rest" :</div>
+    </div>
     <!-- hidden part -->
     <div class="planB"></div>
   </div>
@@ -59,6 +62,24 @@ export default {
     hrefhex() {
       this.$router.push({ path: '../component/Echarts/Hex/Hex' })
     },
+    caculate(){
+      const arr = [1,[[2],3,4],5]
+      console.log('原数组：', arr)
+      const flatit = arr =>{
+        return arr.reduce((flat,toFlat) => {
+          return flat.concat(Array.isArray(toFlat)?flatit(toFlat):toFlat)
+        },[])
+      }
+      const res =flatit(arr)
+      console.log('拍平:', res)
+
+      const newA = [1,[[[2],3],4],[[5],6],7,8]
+      console.log('原数组：',newA)
+      console.log('FLAT IT! ',newA.flat(Infinity))
+    }
+  },
+  mounted(){
+    this.caculate()
   }
 }
 </script>

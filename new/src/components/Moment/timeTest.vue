@@ -42,8 +42,8 @@ export default {
       this.startTime = this.$refs.getDate.value
       this.days = this.$refs.getdays.value
     },
-    closeMoment(){
-      this.$emit('closeMoment')
+    closeMoment() {
+      this.$router.push({ path: '/' })
       console.log('timetest close!')
     }
   },
@@ -60,8 +60,13 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.time-set{
-   width: 100%;
+.time-set {
+  width: 100%;
   height: 100%;
+  // 下列内容为覆盖全页面
+  // background-color: #fff;
+  // position:absolute;
+  // left:0;
+  // top:0;
 }
 </style>
