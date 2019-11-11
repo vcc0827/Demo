@@ -1,5 +1,6 @@
 <template>
-    <div :id="id" class="orderArea orderbarArea"></div>
+    <div :id="id" class="orderArea orderbarArea"></div> 
+    <!-- 联动柱状图 -->
 </template>
 
 <script>
