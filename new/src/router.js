@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+
+
 Vue.use(Router)
 
 export default new Router({
@@ -34,6 +36,16 @@ export default new Router({
       path: '/left',
       name: 'left',
       component: resolve => require(['./components/Left.vue'],resolve)
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component:resolve=>require(['./views/Login.vue'],resolve)
+    },
+    {
+      path: '/regist',
+      name: 'Regist',
+      cmoponent:resolve =>require(['./views/Regist.vue'],resolve)
     }
   ]
 })

@@ -7,7 +7,13 @@
     <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
   </head>
   <body>
-    <p>...拓展运算符用途： 分割数组和字符串;在某些场景替代 apply </p>
+    <p>...拓展运算符用途： 分割数组和字符串;在某些场景替代 apply</p>
     <p>rest运算符：合并分割序列成数组</p>
+    <p>根据奇偶改变样式</p>
+    <p>
+      :style="index/2?{ 'background-color': 'rgb(85, 130, 50)'}:{
+      'background-color': 'rgb(200, 90, 20)'}"
+    </p>
+    <p>for in循环遍历的是数组的键值(索引)，而for of循环遍历的是数组的值</p>
   </body>
 </html>

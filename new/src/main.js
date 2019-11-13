@@ -9,6 +9,8 @@ import axios from 'axios'
 Vue.prototype.$echarts = echarts
 Vue.config.productionTip = false
 Vue.prototype.axios = axios
+// Vue.userConfig = config
+// Vue.prototype.userConfig = confing
 Vue.use(Echarts)
 
 new Vue({

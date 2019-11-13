@@ -33,5 +33,10 @@
                 {"section_tittle":"第9章","content":"3333sdasdf123"}
             ]
         }
-    }
+    },
+    "newspaper":[
+        {"id":1,"tittle":"di 1 pian","author":"1th","content":"content1content1"},
+        {"id":2,"tittle":"di 2 pian","author":"2th","content":"content2content2"},
+        {"id":3,"tittle":"di 3 pian","author":"3th","content":"content3content3"}
+    ]
 }
