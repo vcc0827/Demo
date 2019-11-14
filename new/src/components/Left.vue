@@ -63,7 +63,7 @@ export default {
   .top {
     width: 100%;
     height: 20%;
-    background-color: #00f4ff;
+    // background-color: #00f4ff;
   }
   .bottom {
     display: flex;
@@ -73,12 +73,12 @@ export default {
     .left {
       width: calc(100% - 90%);
       height: calc(100% - 20%);
-      background-color: #ccf;
+      // background-color: #ccf;
     }
     .right {
       width: calc(100% - 10%);
       height: calc(100% - 20%);
-      background-color: rgb(84, 206, 135);
+      // background-color: rgb(84, 206, 135);
     }
   }
 }
