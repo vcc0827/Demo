@@ -39,13 +39,18 @@ export default new Router({
     },
     {
       path: '/login',
-      name: 'Login',
+      name: 'login',
       component:resolve=>require(['./views/Login.vue'],resolve)
     },
     {
       path: '/regist',
       name: 'Regist',
       cmoponent:resolve =>require(['./views/Regist.vue'],resolve)
-    }
+    },
+    {
+      path: '/train',
+      name: 'train',
+      component: resolve => require(['./views/train.vue'], resolve)
+    },
   ]
 })

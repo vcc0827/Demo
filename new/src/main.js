@@ -6,12 +6,22 @@ import Echarts from './echat/echarts'
 import echarts from 'echarts'
 import axios from 'axios'
 
+window.axios = require('axios')
+
 Vue.prototype.$echarts = echarts
 Vue.config.productionTip = false
 Vue.prototype.axios = axios
-// Vue.userConfig = config
-// Vue.prototype.userConfig = confing
+
 Vue.use(Echarts)
+
+Promise.all([
+  window.axios.get('json/config.json').then(res => {
+    return res.data
+  })
+]).then(([config]) => {
+  Vue.userConfig = config
+  Vue.prototype.userConfig = config
+})
 
 new Vue({
   router,
