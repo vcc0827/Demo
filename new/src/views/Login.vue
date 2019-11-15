@@ -70,6 +70,11 @@
 </template>
 
 <script>
+// 加{}的是通过export方式导出 可以直接导出变量表达式
+//而export 可以有多个;export default只能有一个
+import logoImg from '@/assets/logo.png'
+import {login} from '@api/user'
+
 export default {
   data() {
     return {
@@ -95,35 +100,27 @@ export default {
     }
   },
   methods: {
-	showMessage(type,message){
-		this.$message({
-			type:type,
-			message:message
-		})
-	},
-	// 验证
-	submitForm(loginForm) {
-		this.$refs[loginForm].validate(valid => {
-			if(valid){
-				let userinfo = this.loginForm
-				login(userinfo).then(res => {
-					let userList = res.data.userList
-					setToken("Token",userList.token)
-					this.$router.push({path:"/"})
-					this.$store.dispatch('initLeftMenu') //保持左侧目录打开 dispatch异步操作 向后台提交数据
-				})
-			}
-		})
-	}
-
-
-
-
-
-
-
-
-	// 第三方登录
+    showMessage(type, message) {
+      this.$message({
+        type: type,
+        message: message
+      })
+    },
+    // 验证
+    submitForm(loginForm) {
+      this.$refs[loginForm].validate(valid => {
+        if (valid) {
+          let userinfo = this.loginForm
+          login(userinfo).then(res => {
+            let userList = res.data.userList
+            setToken('Token', userList.token)
+            this.$router.push({ path: '/' })
+            this.$store.dispatch('initLeftMenu') //保持左侧目录打开 dispatch异步操作 向后台提交数据
+          })
+        }
+      })
+    },
+    // 第三方登录
     loginByWechat() {},
     loginByWeibo() {},
     loginByQQ() {}
