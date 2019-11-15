@@ -1,26 +1,31 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-
-
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
+      name: 'login',
+      component: resolve => require(['./views/Login.vue'], resolve)
+    },
+    {
+      path: '/index',
       name: 'index',
       component: resolve => require(['./views/index.vue'], resolve)
     },
     {
-      path:'/moment',
-      name:'moment',
-      component: resolve => require(['./components/Moment/timeTest.vue'], resolve)
+      path: '/moment',
+      name: 'moment',
+      component: resolve =>
+        require(['./components/Moment/timeTest.vue'], resolve)
     },
     {
       path: '/hex',
       name: 'Hex',
-      component: resolve => require(['./components/Echarts/Hex/Hex.vue'], resolve)
+      component: resolve =>
+        require(['./components/Echarts/Hex/Hex.vue'], resolve)
     },
     {
       path: '/jsons',
@@ -30,27 +35,23 @@ export default new Router({
     {
       path: '/energy',
       name: 'energy',
-      component: resolve => require(['./components/EnergyBar/energyBar.vue'],resolve)
+      component: resolve =>
+        require(['./components/EnergyBar/energyBar.vue'], resolve)
     },
     {
       path: '/left',
       name: 'left',
-      component: resolve => require(['./components/Left.vue'],resolve)
-    },
-    {
-      path: '/login',
-      name: 'login',
-      component:resolve=>require(['./views/Login.vue'],resolve)
+      component: resolve => require(['./components/Left.vue'], resolve)
     },
     {
       path: '/regist',
       name: 'Regist',
-      cmoponent:resolve =>require(['./views/Regist.vue'],resolve)
+      cmoponent: resolve => require(['./views/Regist.vue'], resolve)
     },
     {
       path: '/train',
       name: 'train',
       component: resolve => require(['./views/train.vue'], resolve)
-    },
+    }
   ]
 })

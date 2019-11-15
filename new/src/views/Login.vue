@@ -1,55 +1,135 @@
 <template>
-  <div class="login_page">
-	  	<transition name="form-fade" mode="in-out">
-	  		<section class="form_contianer">
-			     <div class='titleArea rflex'>
-					<img class="logo" :src="logo" alt="标题图片">
-					<span class='title'>这是标题</span>
-				</div>
-		    	<el-form :model="loginForm" :rules="rules" ref="loginForm" class="loginForm">
-					<el-form-item prop="username" class="login-item">
-					    <span class="loginTips"><icon-svg icon-class="iconuser" /></span>
-						<el-input @keyup.enter.native ="submitForm('loginForm')"  class="area" type="text" placeholder="用户名" v-model="loginForm.username" ></el-input>
-					</el-form-item>
-					<el-form-item prop="password" class="login-item"> 
-					    <span class="loginTips"><icon-svg icon-class="iconLock" /></span>
-						<el-input @keyup.enter.native ="submitForm('loginForm')" class="area" type="password" placeholder="密码" v-model="loginForm.password"></el-input>
-					</el-form-item>
-					<el-form-item>
-				    	<el-button type="primary"  @click="submitForm('loginForm')" class="submit_btn">SIGN IN</el-button>
-				  	</el-form-item>
-					<div class="sanFangArea">
-						<p class="title">第三方账号登录</p>
-						<ul class="rflex">
-							<li @click="loginByWechat">
-						       <icon-svg icon-class="iconwechat" />
-							</li>
-							<li>
-							    <icon-svg icon-class="iconweibo" />
-							</li>
-							<li>
-							    <icon-svg icon-class="iconGithub" />
-							</li>
-						</ul>
-				    </div>
-				</el-form>
-	  		</section>
-	  	</transition>
-  	</div>
+  <div class="login-page">
+    <div name="form-fade">
+      <section class="form-container">
+        <div class="form-head">
+          <img :src="logo" alt="logo图片" class="logo" />
+          <span class="tittle">标题</span>
+        </div>
+        <form
+          :model="loginForm"
+          :rules="rules"
+          ref="loginForm"
+          class="login-form"
+        >
+          <!-- 用户名 -->
+          <form-item prop="username" class="login-item">
+            <span class="loginTips"><icon-svg icon-class="iconUser"/></span>
+            <input
+              type="text"
+              placeholder="请输入用户名"
+              class="area"
+              v-model="loginForm.username"
+              @keyup.enter="submitForm('loginForm')"
+            />
+          </form-item>
+          <!-- 密码 -->
+          <form-item prop="password" class="login-tiem">
+            <span class="loginTips"><icon-svg icon-class="iconPass"/></span>
+            <input
+              type="password"
+              placeholder="请输入密码"
+              class="area"
+              v-model="loginForm.password"
+              @keyup.enter="submitForm('loginForm')"
+            />
+          </form-item>
+          <!-- 登录按钮 -->
+          <form-item>
+            <button
+              type="primary"
+              @click="submitForm('loginForm')"
+              class="submit-btn"
+            >
+              登录
+            </button>
+          </form-item>
+        </form>
+        <!-- tips -->
+        <div class="tip-area">
+          <p>没有账号请先注册</p>
+        </div>
+        <!-- login by other ways -->
+        <div class="other-way">
+          <p class="title">第三方登录</p>
+          <ul class="rflex">
+            <li @click="loginByWechat">
+              <icon-svg icon-class="icon-wechat" />
+            </li>
+            <li @click="loginByWeibo">
+              <icon-svg icon-class="icon-weibo" />
+            </li>
+            <li @click="loginByQQ">
+              <icon-svg icon-class="icon-qq" />
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-    
+  data() {
+    return {
+      logo: logoImg,
+      loginForm: {
+        username: 'admin',
+        password: '12345'
+      },
+      rules: {
+        username: [
+          { required: true, message: '还没有输入用户名', trigger: 'blur' },
+          {
+            min: 6,
+            max: 10,
+            message: '密码长度6至10个字符',
+            trigger: 'blur'
+          }
+        ],
+        password: [
+          { required: true, message: '还没有输入密码', trigger: 'blur' }
+        ]
+      }
+    }
+  },
+  methods: {
+	showMessage(type,message){
+		this.$message({
+			type:type,
+			message:message
+		})
+	},
+	// 验证
+	submitForm(loginForm) {
+		this.$refs[loginForm].validate(valid => {
+			if(valid){
+				let userinfo = this.loginForm
+				login(userinfo).then(res => {
+					let userList = res.data.userList
+					setToken("Token",userList.token)
+					this.$router.push({path:"/"})
+					this.$store.dispatch('initLeftMenu') //保持左侧目录打开 dispatch异步操作 向后台提交数据
+				})
+			}
+		})
+	}
+
+
+
+
+
+
+
+
+	// 第三方登录
+    loginByWechat() {},
+    loginByWeibo() {},
+    loginByQQ() {}
+  },
+  mounted() {}
 }
 </script>
 
-<style scoped lang="less">
-.login_page{
-    	position: absolute;
-		width: 100%;
-		height: 100%;
-		// background: url(../assets/img/bg9.jpg) no-repeat center center;
-		background-size: 100% 100%;
-}
-</style>
+<style lang="less" scoped></style>
