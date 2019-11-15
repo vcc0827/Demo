@@ -1,31 +1,15 @@
-# new
+# 关于
+    Vue全家桶搭建的一个包含各种小项目的大杂烩
 
-## Project setup
-```
-npm install
-```
+### How to use 
+1.git clone git@github.com:vcc0827/Demo.git
+2.npm install or cnpm i
+3.npm run serve
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### 已完成部分
+echarts 运动员能力图
+moment 倒计时小工具
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-<<<<<<< HEAD
-
-=======
-### content 
-moment、echarts、json
->>>>>>> 4623558c93c341d4dc9b231911c115dc0ad8ea4a
+### 未完成部分
+echarts 柱状图 柱条改电池能量格
+<img :src="./assets/graphical.png">
