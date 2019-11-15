@@ -14,7 +14,7 @@
 
 ## 提示
 <p style="display:flex;align-items:center;">
- 如果你觉得该项目对你有帮忙，记得给我点赞吧!<img src="https://github.com/wdlhao/vue2-element-touzi-admin/blob/dev-base/src/assets/img/zan.png" width="80px" /></p>
+ 如果你觉得该项目对你有帮忙，记得给我点赞吧</p>
 
 ## About
 
