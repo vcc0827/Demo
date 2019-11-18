@@ -152,6 +152,7 @@ export default {
     }
   },
   methods: {
+    // 柱状图
     drawBar() {
       this.option1 = {
         legend: {
@@ -186,16 +187,26 @@ export default {
             data: [37, 34, 19, 48, 48, 31, 36, 18, 57, 71]
           }
         ]
-      },
-      this.option2={
+      }
+    },
+    drawPie1(){
+      this.option2 = {
+        legend:{
+          orient:'vertical',
+          left:'left',
+          data:['校门','教学楼','食堂','操场','宿舍']
+        },
         
       }
-      this.option3={}
-      this.option4={}
-    }
+    },
+    drawPie2(){},
+    drawCircle(){}
   },
   mounted() {
-    this.drawBar()
+    this.drawBar(),
+    this.drawPie1(),
+    this.drawPie2(),
+    this.drawCircle()
   }
 }
 </script>
@@ -353,4 +364,28 @@ ul {
     height: 100%;
   }
 }
+ .pieChart1{
+   width: 300px;
+  height: 220px;
+   .pie{
+     width:100%;
+     height:100%;
+   }
+ }
+ .pieChart2{
+   width: 300px;
+  height: 220px;
+   .pie{
+     width:100%;
+     height:100%;
+   }
+ }
+ .circleChart1{
+   width: 300px;
+  height: 220px;
+   .pie{
+     width:100%;
+     height:100%;
+   }
+ }
 </style>
