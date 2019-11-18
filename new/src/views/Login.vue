@@ -73,7 +73,7 @@
 // 加{}的是通过export方式导出 可以直接导出变量表达式
 //而export 可以有多个;export default只能有一个
 import logoImg from '@/assets/logo.png'
-import {login} from '@api/user'
+// import {login} from '@api/user'
 
 export default {
   data() {

@@ -5,13 +5,13 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    // {
+    //   path: '/',
+    //   name: 'login',
+    //   component: resolve => require(['./views/Login.vue'], resolve)
+    // },
     {
       path: '/',
-      name: 'login',
-      component: resolve => require(['./views/Login.vue'], resolve)
-    },
-    {
-      path: '/index',
       name: 'index',
       component: resolve => require(['./views/index.vue'], resolve)
     },
@@ -52,6 +52,11 @@ export default new Router({
       path: '/train',
       name: 'train',
       component: resolve => require(['./views/train.vue'], resolve)
+    },
+    {
+      path: '/cop',
+      name: 'cop',
+      component: resolve => require(['./views/cop.vue'], resolve)
     }
   ]
 })
