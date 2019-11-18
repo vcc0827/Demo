@@ -88,10 +88,19 @@
           <div class="check-right-top-right box">
             <div class="tittle"><span>学校前端监控统计</span></div>
             <!-- 监控点位统计图 -->
+            <div class="pieChart1">
+              <div class="pie" v-echarts="option2"></div>
+            </div>
             <!--  -->
             <!-- 运行状态统计图 -->
+            <div class="circleChart">
+              <div class="circle" v-echarts="option3"></div>
+            </div>
             <!--  -->
             <!-- 品牌数量统计图 -->
+            <div class="pieChart2">
+              <div class="pie" v-echarts="option4"></div>
+            </div>
             <!--  -->
           </div>
         </div>
@@ -136,7 +145,10 @@
 export default {
   data() {
     return {
-      option1: {}
+      option1: {},
+      option2: {},
+      option3: {},
+      option4: {}
     }
   },
   methods: {
@@ -147,10 +159,10 @@ export default {
         },
         xAxis: {
           type: 'value',
-          min:0,
-          max:90,
-          minInterval:10,
-          maxInterval:10,
+          min: 0,
+          max: 90,
+          minInterval: 10,
+          maxInterval: 10
         },
         yAxis: {
           type: 'category',
@@ -174,7 +186,12 @@ export default {
             data: [37, 34, 19, 48, 48, 31, 36, 18, 57, 71]
           }
         ]
+      },
+      this.option2={
+        
       }
+      this.option3={}
+      this.option4={}
     }
   },
   mounted() {
