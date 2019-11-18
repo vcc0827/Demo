@@ -63,6 +63,7 @@ export default {
 .time-set {
   width: 100%;
   height: 100%;
+  // background-color: #e4e4e4;
   // 下列内容为覆盖全页面
   // background-color: #fff;
   // position:absolute;
