@@ -3,7 +3,7 @@
     <div class="tittle">能量条柱状统计图</div>
     <div>
       效果图：
-      <img src="../../assets/graphical.png" width="200px" height="200px" alt />
+      <img src="../../../assets/graphical.png" width="200px" height="200px" alt />
     </div>
     <div class="myChart">
       <div class="bar" v-echarts="option"></div>
