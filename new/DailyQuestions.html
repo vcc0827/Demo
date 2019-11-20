@@ -19,12 +19,20 @@
     </div>
     <div>2.$route和$router 的区别？</div>
     <div>
-      答：$router 传参 $route 接收参数 
-      query 方式： 
-      传参: this.$router.push({
+      答：$router 传参 $route 接收参数 query 方式： 传参: this.$router.push({
       path:'/xxx' query:{ id:id } }) 接收参数: this.$route.query.id params 方式:
       this.$router.push({ name:'xxx' params:{ id:id } }) 接收参数:
       this.$route.params.id
+    </div>
+    <div>
+      <p>遇到以下git问题</p>
+      PS D:\testdemo\aGit> git commit -m '11' <br>
+      On branch master Your branch is up to date with 'origin/master'. <br>
+      Changes not staged for commit: <br>
+      modified: vue2-element-touzi-admin (modified content) no changes added to commit <br>
+    </div>
+    <div>
+      答：是因为该文件中包含了.git文件 删除.git文件即可
     </div>
   </body>
 </html>
