@@ -53,10 +53,6 @@ export default new Router({
       name: 'train',
       component: resolve => require(['./views/train.vue'], resolve)
     },
-    {
-      path: '/cop',
-      name: 'cop',
-      component: resolve => require(['./views/cop.vue'], resolve)
-    }
+    
   ]
 })
