@@ -39,10 +39,10 @@ export default new Router({
         require(['./components/Echarts/EnergyBar/energyBar.vue'], resolve)
     },
     {
-      path: '/pie',
-      name: 'Pie',
+      path: '/circle',
+      name: 'Circle',
       component: resolve =>
-        require(['./components/Echarts/SuperPie/Pie.vue'], resolve)
+        require(['./components/Echarts/Circle/circle.vue'], resolve)
     },
     {
       path: '/left',

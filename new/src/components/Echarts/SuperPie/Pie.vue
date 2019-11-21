@@ -14,7 +14,12 @@ export default {
         }
     },
     methods: {
-        
+        drawPie(){
+          
+        }
+    },
+    mounted(){
+      this.drawPie()
     }
 }
 </script>
