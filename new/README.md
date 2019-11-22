@@ -19,6 +19,8 @@ echarts 柱状图 柱条改电池能量格
 <img :src="./assets/graphical.png">
 
 ## 计划
-重构 
+new plan 
+2019.11.25 start
+重构目录结构 整理路由和页面 
 Home.vue |-->Nav.vue
          |-->Contain.vue |-->具体展示模块（） 
