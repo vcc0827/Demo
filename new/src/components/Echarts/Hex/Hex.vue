@@ -176,9 +176,9 @@ export default {
 
 <style scoped lang="less">
 .container {
-position:absolute;
-left:0;
-top:0;
+// position:absolute;
+// left:0;
+// top:0;
   // display: flex;
   .hex-box {
     width: 400px;
