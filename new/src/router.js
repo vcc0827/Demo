@@ -59,6 +59,17 @@ export default new Router({
       name: 'train',
       component: resolve => require(['./views/train.vue'], resolve)
     },
-    
+    {
+      path: '/pie',
+      name: 'pie',
+      component: resolve =>
+        require(['./components/Echarts/SuperPie/Pie.vue'], resolve)
+    },
+    {
+      path: '/coin',
+      name: 'coin',
+      component: resolve =>
+        require(['./components/Echarts/SuperPie/BitCoin.vue'], resolve)
+    },
   ]
 })

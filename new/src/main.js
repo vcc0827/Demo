@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import Echarts from './echat/echarts'
 import echarts from 'echarts'
+import 'echarts-gl'
 import axios from 'axios'
 
 window.axios = require('axios')
