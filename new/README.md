@@ -17,3 +17,8 @@ moment 倒计时小工具
 
 echarts 柱状图 柱条改电池能量格
 <img :src="./assets/graphical.png">
+
+## 计划
+重构 
+Home.vue |-->Nav.vue
+         |-->Contain.vue |-->具体展示模块（） 
