@@ -8,6 +8,7 @@ import 'echarts-gl'
 import axios from 'axios'
 import ViewUI from 'view-design'
 import 'view-design/dist/styles/iview.css'
+import VueRouter from 'vue-router'
 
 window.axios = require('axios')
 
@@ -17,6 +18,7 @@ Vue.prototype.axios = axios
 
 Vue.use(Echarts)
 Vue.use(ViewUI)
+
 
 Promise.all([
   window.axios.get('json/config.json').then(res => {

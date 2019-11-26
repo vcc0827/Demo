@@ -71,5 +71,10 @@ export default new Router({
       component: resolve =>
         require(['./components/Echarts/SuperPie/BitCoin.vue'], resolve)
     },
+    {
+      path: '/fgnb',
+      name:'final',
+      component: resolve => require(['../src/WeeklyTarget.vue'],resolve)
+    }
   ]
 })
