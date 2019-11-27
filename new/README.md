@@ -12,10 +12,10 @@
 
     echarts 运动员能力图
     moment 倒计时小工具
-
+    echarts 电池型柱状图
 ### 未完成部分
-
-    echarts 柱状图 柱条改电池能量格
+    页面跳转重构中……
+    
 <img :src="./assets/graphical.png">
 
 ### 计划
