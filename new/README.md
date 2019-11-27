@@ -14,6 +14,7 @@
     moment 倒计时小工具
     echarts 电池型柱状图
 ### 未完成部分
+    每周目标完成进度页面
     页面跳转重构中……
     
 <img :src="./assets/graphical.png">

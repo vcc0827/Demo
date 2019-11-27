@@ -55,7 +55,7 @@ export default {
   data() {
     return {
       isHideMenu: false,
-      openNames: [],
+      openNames: '',
       activeNames: '/'
     }
   },
