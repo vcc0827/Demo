@@ -4,9 +4,9 @@
 
 ### How to use
 
-1.git clone git@github.com:vcc0827/Demo.git <br/>
-2.npm install or cnpm i <br/>
-3.npm run serve <br/>
+    1.git clone git@github.com:vcc0827/Demo.git <br/>
+    2.npm install or cnpm i <br/>
+    3.npm run serve <br/>
 
 ### 已完成部分
 
@@ -21,6 +21,4 @@ echarts 柱状图 柱条改电池能量格
 ## 计划
 new plan 
 2019.11.25 start
-重构目录结构 整理路由和页面 
-Home.vue |-->Nav.vue
-         |-->Contain.vue |-->具体展示模块（） 
+优化目录结构 整理路由和页面 
