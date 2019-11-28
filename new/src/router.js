@@ -79,7 +79,7 @@ export default new Router({
     {
       path: '/fgnb',
       name:'final',
-      component: resolve => require(['../src/WeeklyTarget.vue'],resolve)
+      component: resolve => require(['../src/Target.vue'],resolve)
     }
   ]
 })

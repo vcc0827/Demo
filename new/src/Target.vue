@@ -9,8 +9,8 @@
       />
     </div>
     <div class="split"></div>
-    <div class="right"> 
-      <!-- 能不能通过v-for渲染出来？ 可以但没必要。 done -->
+    <div class="right">
+      <!-- 能不能通过v-for渲染出来？ 如果moduels的数量达到100+的时候仍采用CTRL+C/V然后改内容的方式效率太低了：（ -->
       <div class="moduels">
         <div>一、JavaScript基础</div>
         <!-- 实现进度条 点击checkbox完成按钮增加进度以及显示完成度 -->
@@ -53,6 +53,7 @@
         </div>
         <div>
           <!-- 定义数组 选中则添加进数组 取消选中移出数组 通过数组长度确定进度的增减(总长度已知) -->
+          <!-- 能不能通过json获取数据然后渲染到span里面？ -->
           <CheckboxGroup v-model="htmlCss" @on-change="addHc">
             <Checkbox label="twitter">
               <Icon type="logo-twitter"></Icon>
@@ -277,6 +278,12 @@
           </CheckboxGroup>
         </div>
       </div>
+      <br />
+      <br />
+   
+      <div class="bottom">
+        <button @click="submit">确认提交</button>
+      </div>
     </div>
   </div>
 </template>
@@ -367,6 +374,30 @@ export default {
       let flon = 1
       let percent = (lon / flon).toFixed(4) * 100
       return percent
+    },
+
+    login() {
+      this.$axios
+        .post('/user', {
+          username: this.loginForm.username,
+          password: this.loginForm.password
+        })
+        .then(response => {
+          if (response.data.code == 1) {
+            this.$message.success({
+              message: 'success!',
+              showClose: true
+            })
+            //username和token 存入sessionStorage
+            sessionStorage.setItem('userName', response.data.res.username)
+            sessionStorage.setItem('userToken', response.data.res.token)
+            //username放入vuex
+            this.$store.dispatch('setUser', response.data.res.username)
+            this.$store.dispatch('userToken', response.data.res.token)
+            console.log(this.$store.state.isLogin)
+            this.$router.push({ path: '/' })
+          }
+        })
     }
   }
 }
