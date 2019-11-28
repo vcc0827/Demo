@@ -1,5 +1,5 @@
 <template>
-  <!-- 如何获取iview中的checkbox组件的值？ -->
+  <!-- 如何获取iview中的checkbox组件的值？ done -->
   <div class="weekly-container">
     <div class="left">
       <img
@@ -9,7 +9,8 @@
       />
     </div>
     <div class="split"></div>
-    <div class="right">
+    <div class="right"> 
+      <!-- 能不能通过v-for渲染出来？ 可以但没必要。 done -->
       <div class="moduels">
         <div>一、JavaScript基础</div>
         <!-- 实现进度条 点击checkbox完成按钮增加进度以及显示完成度 -->

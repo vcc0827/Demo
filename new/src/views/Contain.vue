@@ -55,7 +55,7 @@ export default {
   data() {
     return {
       isHideMenu: false,
-      openNames: '',
+      // openNames: '',
       activeNames: '/'
     }
   },
@@ -80,22 +80,22 @@ export default {
       let currentPath = this.$router.currentRoute.path
       switch (currentPath) {
         case '/left':
-          this.openNames = ['menu1']
+          // this.openNames = ['menu1']
           this.$router.push('/left')
           this.activeNames = 'left'
           break
         case '/hex':
-          this.openNames = ['menu1']
+          // this.openNames = ['menu1']
           this.$router.push('/hex')
           this.activeNames = 'hex'
           break
         case '/pie':
-          this.openNames = ['menu1']
+          // this.openNames = ['menu1']
           this.$router.push('/pie')
           this.activeNames = 'pie'
           break
         default: {
-          this.openNames = ['menu1']
+          // this.openNames = ['menu1']
           this.$router.push('/')
           this.activeNames = ''
           break

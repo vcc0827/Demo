@@ -48,6 +48,11 @@ export default new Router({
       path: '/left',
       name: 'left',
       component: resolve => require(['./components/Left.vue'], resolve)
+    }, 
+    {
+      path: '/test',
+      name: 'test',
+      component: resolve => require(['./components/test.vue'], resolve)
     },
     {
       path: '/regist',
