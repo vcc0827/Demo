@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import circle from '@/components/Echarts/Circle/circle.vue'
 
 Vue.use(Router)
 
@@ -20,9 +19,8 @@ export default new Router({
         {
           path: '/circle',
           name: 'Circle',
-          // component: resolve =>
-          //   require(['./components/Echarts/Circle/circle.vue'], resolve)
-          component: circle
+          component: resolve =>
+            require(['./components/Echarts/Circle/circle.vue'], resolve)
         },
         {
           path: '/hex',
