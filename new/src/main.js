@@ -29,6 +29,11 @@ Promise.all([
   Vue.prototype.userConfig = config
 })
 
+// 拦截抛出的异常
+const routerPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+  return routerPush.call(this, location).catch(error=> error)
+}
 new Vue({
   router,
   store,

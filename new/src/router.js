@@ -1,19 +1,36 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import circle from '@/components/Echarts/Circle/circle.vue'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'login',
-    //   component: resolve => require(['./views/Login.vue'], resolve)
-    // },
     {
       path: '/',
       name: 'index',
-      component: resolve => require(['./views/Contain.vue'], resolve)
+      component: resolve => require(['./views/Contain.vue'], resolve),
+      children: [
+        {
+          path: '/energy',
+          name: 'energy',
+          component: resolve =>
+            require(['./components/Echarts/EnergyBar/energyBar.vue'], resolve)
+        },
+        {
+          path: '/circle',
+          name: 'Circle',
+          // component: resolve =>
+          //   require(['./components/Echarts/Circle/circle.vue'], resolve)
+          component: circle
+        },
+        {
+          path: '/hex',
+          name: 'Hex',
+          component: resolve =>
+            require(['./components/Echarts/Hex/Hex.vue'], resolve)
+        }
+      ]
     },
     {
       path: '/moment',
@@ -21,34 +38,18 @@ export default new Router({
       component: resolve =>
         require(['./components/Moment/timeTest.vue'], resolve)
     },
-    {
-      path: '/hex',
-      name: 'Hex',
-      component: resolve =>
-        require(['./components/Echarts/Hex/Hex.vue'], resolve)
-    },
+
     {
       path: '/jsons',
       name: 'jsons',
       component: resolve => require(['./components/Jsons/jsons.vue'], resolve)
     },
-    {
-      path: '/energy',
-      name: 'energy',
-      component: resolve =>
-        require(['./components/Echarts/EnergyBar/energyBar.vue'], resolve)
-    },
-    {
-      path: '/circle',
-      name: 'Circle',
-      component: resolve =>
-        require(['./components/Echarts/Circle/circle.vue'], resolve)
-    },
+
     {
       path: '/left',
       name: 'left',
       component: resolve => require(['./components/Left.vue'], resolve)
-    }, 
+    },
     {
       path: '/test',
       name: 'test',
@@ -78,8 +79,8 @@ export default new Router({
     },
     {
       path: '/fgnb',
-      name:'final',
-      component: resolve => require(['../src/Target.vue'],resolve)
+      name: 'final',
+      component: resolve => require(['../src/Target.vue'], resolve)
     }
   ]
 })

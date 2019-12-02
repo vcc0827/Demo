@@ -147,14 +147,10 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  width: 1080px;
-  height: 768px;
-}
-.chart {
-  margin-top: 100px;
-  width: 600px;
-  height: 500px;
+
+.chart { 
+  width: 800px;
+  height: 600px;
 }
 .pie {
   width: 100%;

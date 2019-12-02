@@ -23,7 +23,7 @@
           <CheckboxGroup v-model="js" @on-change="addJs">
             <Checkbox label="twitter">
               <Icon type="logo-twitter"></Icon>
-              <span>变量和类型</span>
+              <span  @click="getJS">12312{{store}}</span>
             </Checkbox>
             <Checkbox label="facebook">
               <Icon type="logo-facebook"></Icon>
@@ -280,7 +280,6 @@
       </div>
       <br />
       <br />
-   
       <div class="bottom">
         <button @click="submit">确认提交</button>
       </div>
@@ -296,6 +295,7 @@ export default {
       //进度条
       percent: 0,
       //checkbox状态
+      target:[],
       js: [],
       htmlCss: [],
       base: [],
@@ -305,7 +305,8 @@ export default {
       project: [],
       business: [],
       up: [],
-      other: []
+      other: [],
+      store:{}
     }
   },
   methods: {
@@ -314,12 +315,17 @@ export default {
       this.flag = !this.flag
       return this.flag
     },
-
     addJs() {
       let lon = this.js.length
       let flon = 5
       let percent = (lon / flon).toFixed(4) * 100
       return percent
+    },
+   async getJS(){ 
+      console.log('click!')
+      let res = await this.axios('/json/api/target.json').then(res=>res.data)
+      this.store = res.htmlCss
+      console.log('target:',this.store)
     },
     addHc() {
       let lon = this.htmlCss.length
@@ -398,6 +404,9 @@ export default {
             this.$router.push({ path: '/' })
           }
         })
+    },
+    submit(){
+      console.log('hhh')
     }
   }
 }

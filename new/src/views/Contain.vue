@@ -9,36 +9,41 @@
       >
         <!-- 下拉菜单 -->
         <Menu
-          class="menu"
-          name="menu1"
+          ref="menu"
           @on-select="selectMenuItem"
-          :active-name="activeNames"
-          :open-names="activeNames"
+          :active-name="activeName"
+          :open-names="openNames"
           mode="vertical"
           width="100%"
+          theme="dark"
         >
           <!-- 一级菜单 -->
-          <Submenu name="subm">
+          <Submenu name="1">
             <!-- 一级菜单标题 -->
             <template slot="title">
               <Icon type="ios-paper"></Icon>
-              试验区↓
+              菜单区域↓
             </template>
-            <!-- 二级菜单 -->
-            <Submenu name="option1">
-              <!-- 二级菜单标题 -->
+            <MenuItem name="circle">circle</MenuItem>
+            <MenuItem name="energy">energyBar</MenuItem>
+            <MenuItem name="Hex">Hex</MenuItem>
+            <MenuItem name="">echart</MenuItem>
+            <Submenu name="echart">
               <template slot="title">
-                <Icon type="ios-paper"></Icon>
-                Echarts
+                <Icon type="ios-paper"></Icon> 二级菜单
               </template>
-              <MenuItem name="">line</MenuItem>
-              <MenuItem name="hex">hex</MenuItem>
-              <MenuItem name="pie">pie</MenuItem>
+              <MenuItem name="n1">n1</MenuItem>
+              <MenuItem name="n2">n2</MenuItem>
+              <MenuItem name="n3">n3</MenuItem>
             </Submenu>
-            <MenuItem name="left">left Page</MenuItem>
-            <MenuItem name="option3">选项三</MenuItem>
-            <MenuItem name="option4">选项四</MenuItem>
-            <MenuItem name="option5">选项五</MenuItem>
+          </Submenu>
+          <Submenu name="2">
+            <template slot="title">
+              <Icon type="ios-paper"></Icon>同级菜单
+            </template>
+            <MenuItem name="n1">n1</MenuItem>
+            <MenuItem name="n2">n2</MenuItem>
+            <MenuItem name="n3">n3</MenuItem>
           </Submenu>
         </Menu>
       </div>
@@ -55,52 +60,51 @@ export default {
   data() {
     return {
       isHideMenu: false,
-      // openNames: '',
-      activeNames: '/'
+      openNames: [],
+      activeName: 'circle'
     }
   },
   watch: {
+    // 重定向路由
     $route: 'redirectRoute'
   },
   methods: {
-    getToken() {},
-
     selectMenuItem(name) {
-      // 当name不为空时 跳转到/name指向的页面  *name要和跳转路由名一致
-      if (name !== '') {
+      if (name != '') {
         this.$router.push('/' + name)
       } else {
-        alert('页面未完成')
-        console.log('not now!')
+        this.$router.push('/')
       }
     },
-    // 路由重定位
+    // 路由重定向
     redirectRoute() {
-      console.log('got it')
       let currentPath = this.$router.currentRoute.path
       switch (currentPath) {
-        case '/left':
-          // this.openNames = ['menu1']
-          this.$router.push('/left')
-          this.activeNames = 'left'
+        case '/circle':
+          this.openNames = ['1']
+          this.$router.push('/circle')
+          this.activeNames = 'circle'
           break
-        case '/hex':
-          // this.openNames = ['menu1']
-          this.$router.push('/hex')
-          this.activeNames = 'hex'
+        case '/energyBar':
+          this.openNames = ['1']
+          this.$router.push('/energyBar')
+          this.activeNames = 'energyBar'
           break
-        case '/pie':
-          // this.openNames = ['menu1']
-          this.$router.push('/pie')
-          this.activeNames = 'pie'
+        case '/Hex':
+          this.openNames = ['1']
+          this.$router.push('/Hex')
+          this.activeNames = 'Hex'
           break
-        default: {
-          // this.openNames = ['menu1']
-          this.$router.push('/')
-          this.activeNames = ''
+        case '/echart':
+          this.openNames = ['1']
+          this.$router.push('/echart')
+          this.activeNames = 'echart'
           break
-        }
       }
+      this.$nextTick(() => {
+        this.$refs.menu.updateOpened()
+        this.$refs.menu.updateActiveName()
+      })
     }
   },
   mounted() {
@@ -115,31 +119,37 @@ export default {
   margin: 0;
 }
 .main-page {
-  width: 1080px;
-  height: 768px;
+  width: 1920px;
+  height: 1080px;
+  overflow-y: auto;
+  background-color: #ccc;
   .main-top {
     width: 100%;
-    height: calc(100% - 90%);
-    border: 1px dashed black;
+    height: 10%;
     background-color: #ddd;
   }
   .main-bottom {
-    height: calc(100% - 10%);
-    width:100%;
+    width: 100%;
+    height: 90%;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
     .main-left {
-      width: calc(100% - 85%);
-      height: calc(100% - 10%);
-      border: 1px dashed black;
+      width: 10%;
+      height: 100%;
       background-color: #ddd;
     }
     .main-right {
       position: absolute;
-      left: calc(100% - 90%);
-      top: calc(100% - 95%);
-      width: calc(100% - 15%);
-     height: calc(100% - 10%);
+      width: 88%;
+      height: 88%;
+      left: 11%;
       background-color: #eee;
-      border: 1px dashed black;
+    }
+    .main-right-small {
+      width: calc(100% - 240px);
+      left: 11%;
     }
   }
 }
