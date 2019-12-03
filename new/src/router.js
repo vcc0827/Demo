@@ -11,6 +11,11 @@ export default new Router({
       component: resolve => require(['./views/Contain.vue'], resolve),
       children: [
         {
+          path: '/JsBase',
+          name: 'jsbase',
+          component: resolve => require(['./components/JsBase.vue'], resolve)
+        },
+        {
           path: '/energy',
           name: 'energy',
           component: resolve =>
@@ -27,14 +32,21 @@ export default new Router({
           name: 'Hex',
           component: resolve =>
             require(['./components/Echarts/Hex/Hex.vue'], resolve)
+        },
+        {
+          path: '/pie',
+          name: 'pie',
+          component: resolve =>
+            require(['./components/Echarts/SuperPie/Pie.vue'], resolve)
+        },
+
+        {
+          path: '/moment',
+          name: 'moment',
+          component: resolve =>
+            require(['./components/Moment/timeTest.vue'], resolve)
         }
       ]
-    },
-    {
-      path: '/moment',
-      name: 'moment',
-      component: resolve =>
-        require(['./components/Moment/timeTest.vue'], resolve)
     },
 
     {
@@ -44,37 +56,12 @@ export default new Router({
     },
 
     {
-      path: '/left',
-      name: 'left',
-      component: resolve => require(['./components/Left.vue'], resolve)
-    },
-    {
       path: '/test',
       name: 'test',
       component: resolve => require(['./components/test.vue'], resolve)
     },
-    {
-      path: '/regist',
-      name: 'Regist',
-      cmoponent: resolve => require(['./views/Regist.vue'], resolve)
-    },
-    {
-      path: '/train',
-      name: 'train',
-      component: resolve => require(['./views/train.vue'], resolve)
-    },
-    {
-      path: '/pie',
-      name: 'pie',
-      component: resolve =>
-        require(['./components/Echarts/SuperPie/Pie.vue'], resolve)
-    },
-    {
-      path: '/coin',
-      name: 'coin',
-      component: resolve =>
-        require(['./components/Echarts/SuperPie/BitCoin.vue'], resolve)
-    },
+
+    //↓↓↓↓↓↓↓↓↓↓↓↓知识体系修炼手册↓↓↓↓↓↓↓↓↓↓↓↓
     {
       path: '/fgnb',
       name: 'final',

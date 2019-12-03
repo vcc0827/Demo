@@ -1,25 +1,26 @@
 <template>
   <div class="time-set">
-    <h1>moment计时器</h1>
+    <h1>倒计时</h1>
     <div class="today">今天是：{{time}}</div>
     <div>
-      启动日期：
+      开业日期：
       <input placeholder="输入格式：19990101" ref="getDate" />
     </div>
 
-    <div class="duration">已运行：{{timeNow}}天</div>
+    <div class="duration">已营业：{{timeNow}}天</div>
     <div class="distance">
-      距离运行
+      距离营业
       <input type="text" ref="getdays" />
-      天 还剩：{{timeTo}}天
+      天 <br> 还剩：{{timeTo}}天
     </div>
     <div class="thatDay">那天是：{{timer}}</div>
     <button @click="change">submit</button>
     <br />
     <br />
-    <div class="close" @click="closeMoment">
+    <!-- 下面这段代码是用来关闭当前页面der -->
+    <!-- <div class="close" @click="closeMoment">
       <button>close</button>
-    </div>
+    </div> -->
   </div>
 </template>
 

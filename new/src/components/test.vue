@@ -1,18 +1,9 @@
 <template>
   <div>
-    <div v-for="(item, index) in items" :key="index" :id="index">
-      <span>下标：{{ index }} 值：{{ item }}</span>
+    <h2>测试页面</h2>
+    <div>Generator函数生成斐波拉契数列（见console）
+      <p>形式上，Generator 函数是一个普通函数，但是有两个特征。一是，function关键字与函数名之间有一个星号；二是，函数体内部使用yield表达式，定义不同的内部状态（yield在英语里的意思就是“产出”）。</p>
     </div>
-    <div>
-      **************************************this is
-      line**************************************************
-    </div>
-    <div v-html="msg"></div>
-    <div>
-      **************************************this is
-      line**************************************************
-    </div>
-    <div id="new">sss</div>
   </div>
 </template>
 
@@ -26,12 +17,22 @@ export default {
     }
   },
   methods: {
-    MakeDiv() {
-      // console.log(1)
+     Fibonacci() {
+      function* fibs() {
+        let a = 0
+        let b = 1
+        while (true) {
+          yield a
+          ;[a, b] = [b, a + b]
+        }
       }
+
+      let [first, second, third, fourth, fifth, sixth] = fibs()
+      console.log('12345th',first, second, third, fourth, fifth, sixth)
+    }
   },
   mounted() {
-    this.MakeDiv()
+    this.Fibonacci()
   }
 }
 </script>

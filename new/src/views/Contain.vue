@@ -1,7 +1,9 @@
 <template>
   <div class="main-page">
     <div class="main-top">
-      <div style="color:white;font-size:26px">第三套中小学生前端例题</div>
+      <div style="color:white;font-size:26px;text-algin:center;">
+        第三套中小学生前端例题
+      </div>
     </div>
     <div class="main-bottom">
       <div
@@ -20,32 +22,43 @@
           theme="dark"
         >
           <!-- 一级菜单 -->
+          <Submenu name="0">
+            <template slot="title">
+              <Icon type="ios-paper"></Icon>Js基础
+            </template>
+            <MenuItem name="JsBase">网站链接</MenuItem>
+          </Submenu>
           <Submenu name="1">
-            <!-- 一级菜单标题 -->
             <template slot="title">
               <Icon type="ios-paper"></Icon>
-              菜单区域↓
+              Echarts
             </template>
-            <MenuItem name="circle">circle</MenuItem>
-            <MenuItem name="energy">energyBar</MenuItem>
-            <MenuItem name="Hex">Hex</MenuItem>
-            <MenuItem name="">echart</MenuItem>
+            <MenuItem name="">line</MenuItem>
+            <MenuItem name="energy">bar</MenuItem>
+            <MenuItem name="circle">pie</MenuItem>
+            <MenuItem name="pie">3dpie</MenuItem>
+            <MenuItem name="Hex">radar</MenuItem>
             <Submenu name="echart">
               <template slot="title">
                 <Icon type="ios-paper"></Icon> 二级菜单
               </template>
-              <MenuItem name="n1">n1</MenuItem>
-              <MenuItem name="n2">n2</MenuItem>
-              <MenuItem name="n3">n3</MenuItem>
+              <MenuItem name="notyet">n1</MenuItem>
             </Submenu>
           </Submenu>
           <Submenu name="2">
             <template slot="title">
-              <Icon type="ios-paper"></Icon>同级菜单
+              <Icon type="ios-paper"></Icon>Moment
             </template>
-            <MenuItem name="n1">n1</MenuItem>
-            <MenuItem name="n2">n2</MenuItem>
-            <MenuItem name="n3">n3</MenuItem>
+            <MenuItem name="moment">moment</MenuItem>
+            <MenuItem name="">line</MenuItem>
+            <MenuItem name="">line</MenuItem>
+          </Submenu>
+          <Submenu name="3">
+            <template slot="title">
+              <Icon type="ios-paper"></Icon>Json应用
+            </template>
+            <MenuItem name="Hex">line</MenuItem>
+            <MenuItem name="Hex">line</MenuItem>
           </Submenu>
         </Menu>
       </div>
@@ -63,7 +76,7 @@ export default {
     return {
       isHideMenu: false,
       openNames: [],
-      activeName: 'circle'
+      activeName: 'jsbase'
     }
   },
   watch: {
@@ -82,6 +95,11 @@ export default {
     redirectRoute() {
       let currentPath = this.$router.currentRoute.path
       switch (currentPath) {
+        case 'JsBase':
+          this.openNames = ['0']
+          this.$router.push('/JsBase')
+          this.activeNames = 'jsbase'
+          break
         case '/circle':
           this.openNames = ['1']
           this.$router.push('/circle')
@@ -102,15 +120,22 @@ export default {
           this.$router.push('/echart')
           this.activeNames = 'echart'
           break
+        case '/pie':
+          this.openNames = ['1']
+          this.$router.push('/pie')
+          this.activeNames = 'pie'
       }
       this.$nextTick(() => {
         this.$refs.menu.updateOpened()
         this.$refs.menu.updateActiveName()
       })
-    }
+    },
+
+   
   },
   mounted() {
     this.redirectRoute()
+    
   }
 }
 </script>
