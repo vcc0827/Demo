@@ -2,7 +2,7 @@
 
     Vue全家桶搭建的一个包含各种小项目的大杂烩
 
-##s How to use
+## How to use
 
     1.git clone git@github.com:vcc0827/Demo.git <br/>
     2.npm install or cnpm i <br/>

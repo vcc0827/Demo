@@ -45,7 +45,13 @@ export default new Router({
           name: 'moment',
           component: resolve =>
             require(['./components/Moment/timeTest.vue'], resolve)
-        }
+        },
+        {
+          path: '/notyet',
+          name: 'notyet',
+          component: resolve =>
+            require(['./components/notyet.vue'], resolve)
+        },
       ]
     },
 
@@ -60,7 +66,11 @@ export default new Router({
       name: 'test',
       component: resolve => require(['./components/test.vue'], resolve)
     },
-
+    {
+      path: '/regist',
+      name: 'regist',
+      component: resolve => require(['./views/Regist.vue'], resolve)
+    },
     //↓↓↓↓↓↓↓↓↓↓↓↓知识体系修炼手册↓↓↓↓↓↓↓↓↓↓↓↓
     {
       path: '/fgnb',

@@ -50,15 +50,15 @@
               <Icon type="ios-paper"></Icon>Moment
             </template>
             <MenuItem name="moment">moment</MenuItem>
-            <MenuItem name="">line</MenuItem>
-            <MenuItem name="">line</MenuItem>
+            <MenuItem name="notyet">line</MenuItem>
+            <MenuItem name="notyet">line</MenuItem>
           </Submenu>
           <Submenu name="3">
             <template slot="title">
               <Icon type="ios-paper"></Icon>Json应用
             </template>
-            <MenuItem name="Hex">line</MenuItem>
-            <MenuItem name="Hex">line</MenuItem>
+            <MenuItem name="jsons">jsons</MenuItem>
+            <MenuItem name="notyet">line</MenuItem>
           </Submenu>
         </Menu>
       </div>
@@ -80,8 +80,8 @@ export default {
     }
   },
   watch: {
-    // 重定向路由
-    $route: 'redirectRoute'
+    // 重定向路由 的作用是防止有人未登录就进入其他页面
+    // $route: 'redirectRoute'
   },
   methods: {
     selectMenuItem(name) {
@@ -92,49 +92,49 @@ export default {
       }
     },
     // 路由重定向
-    redirectRoute() {
-      let currentPath = this.$router.currentRoute.path
-      switch (currentPath) {
-        case 'JsBase':
-          this.openNames = ['0']
-          this.$router.push('/JsBase')
-          this.activeNames = 'jsbase'
-          break
-        case '/circle':
-          this.openNames = ['1']
-          this.$router.push('/circle')
-          this.activeNames = 'circle'
-          break
-        case '/energyBar':
-          this.openNames = ['1']
-          this.$router.push('/energyBar')
-          this.activeNames = 'energyBar'
-          break
-        case '/Hex':
-          this.openNames = ['1']
-          this.$router.push('/Hex')
-          this.activeNames = 'Hex'
-          break
-        case '/echart':
-          this.openNames = ['1']
-          this.$router.push('/echart')
-          this.activeNames = 'echart'
-          break
-        case '/pie':
-          this.openNames = ['1']
-          this.$router.push('/pie')
-          this.activeNames = 'pie'
-      }
-      this.$nextTick(() => {
-        this.$refs.menu.updateOpened()
-        this.$refs.menu.updateActiveName()
-      })
-    },
+    // redirectRoute() {
+    //   let currentPath = this.$router.currentRoute.path
+    //   switch (currentPath) {
+    //     case 'JsBase':
+    //       this.openNames = ['0']
+    //       this.$router.push('/JsBase')
+    //       this.activeNames = 'jsbase'
+    //       break
+    //     case '/circle':
+    //       this.openNames = ['1']
+    //       this.$router.push('/circle')
+    //       this.activeNames = 'circle'
+    //       break
+    //     case '/energyBar':
+    //       this.openNames = ['1']
+    //       this.$router.push('/energyBar')
+    //       this.activeNames = 'energyBar'
+    //       break
+    //     case '/Hex':
+    //       this.openNames = ['1']
+    //       this.$router.push('/Hex')
+    //       this.activeNames = 'Hex'
+    //       break
+    //     case '/echart':
+    //       this.openNames = ['1']
+    //       this.$router.push('/echart')
+    //       this.activeNames = 'echart'
+    //       break
+    //     case '/pie':
+    //       this.openNames = ['1']
+    //       this.$router.push('/pie')
+    //       this.activeNames = 'pie'
+    //   }
+    //   this.$nextTick(() => {
+    //     this.$refs.menu.updateOpened()
+    //     this.$refs.menu.updateActiveName()
+    //   })
+    // },
 
    
   },
   mounted() {
-    this.redirectRoute()
+    // this.redirectRoute()
     
   }
 }
