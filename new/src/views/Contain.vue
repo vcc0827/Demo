@@ -1,6 +1,8 @@
 <template>
   <div class="main-page">
-    <div class="main-top">↑</div>
+    <div class="main-top">
+      <div style="color:white;font-size:26px">第三套中小学生前端例题</div>
+    </div>
     <div class="main-bottom">
       <div
         id="main-left"
