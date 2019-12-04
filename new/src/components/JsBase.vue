@@ -6,6 +6,8 @@
     >
       <img src="../assets/jsbase.png" alt="" style="width:100%;height:100%"
     /></a>
+
+    <a href="javascript:history.go(-1)">回到上一个网页</a>
   </div>
 </template>
 <script>

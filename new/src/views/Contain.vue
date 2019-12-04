@@ -90,7 +90,7 @@ export default {
       } else {
         this.$router.push('/')
       }
-    },
+    }
     // 路由重定向
     // redirectRoute() {
     //   let currentPath = this.$router.currentRoute.path
@@ -130,12 +130,9 @@ export default {
     //     this.$refs.menu.updateActiveName()
     //   })
     // },
-
-   
   },
   mounted() {
     // this.redirectRoute()
-    
   }
 }
 </script>
