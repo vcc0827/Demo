@@ -11,7 +11,7 @@
         class="main-left"
         :class="{ 'mian-left-active': !isHideMenu }"
       >
-        <!-- 下拉菜单 --> 
+        <!-- 下拉菜单 -->
         <Menu
           ref="menu"
           @on-select="selectMenuItem"
@@ -90,7 +90,8 @@ export default {
       } else {
         this.$router.push('/')
       }
-    }
+    },
+ 
     // 路由重定向
     // redirectRoute() {
     //   let currentPath = this.$router.currentRoute.path
@@ -133,6 +134,7 @@ export default {
   },
   mounted() {
     // this.redirectRoute()
+   
   }
 }
 </script>

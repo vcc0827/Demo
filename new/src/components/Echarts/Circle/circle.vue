@@ -96,6 +96,9 @@ export default {
           clockWise: false,
           radius: [190, 200],
           hoverAnimation: false,
+          // 缓慢加载动效
+          animationEasing: name,
+          animationDuration: 10000,
           itemStyle: {
             normal: {
               label: {
@@ -147,8 +150,7 @@ export default {
 </script>
 
 <style scoped>
-
-.chart { 
+.chart {
   width: 800px;
   height: 600px;
 }
