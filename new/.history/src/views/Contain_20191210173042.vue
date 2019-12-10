@@ -70,6 +70,8 @@
   </div>
 </template>
 <script>
+// <link type='text/css' rel='styleSheet' href='../style/instagram.css'/>
+// <link type='text/css' rel='styleSheet' href='../style/instagram.min.css'/>
 </script>
 <script>
 export default {

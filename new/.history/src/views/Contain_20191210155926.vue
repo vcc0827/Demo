@@ -1,5 +1,5 @@
 <template>
-  <div class="main-page">
+  <div class="main-page filter-willow">
     <div class="main-top">
       <div style="color:white;font-size:26px;text-algin:center;">
         第三套中小学生前端例题
@@ -66,10 +66,11 @@
         <router-view></router-view>
       </div>
     </div>
-    <div></div>
   </div>
 </template>
 <script>
+<link type='text/css' rel='styleSheet' href='../style/instagram.css'/>
+// <link type='text/css' rel='styleSheet' href='../style/instagram.min.css'/>
 </script>
 <script>
 export default {
@@ -136,12 +137,6 @@ export default {
       width: calc(100% - 240px);
       left: 11%;
     }
-  }
-  .mybox {
-    width: 300px;
-    height: 300px;
-    border: 1px dashed #eee;
-    background-color: blue;
   }
 }
 </style>

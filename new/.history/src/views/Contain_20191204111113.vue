@@ -66,11 +66,9 @@
         <router-view></router-view>
       </div>
     </div>
-    <div></div>
   </div>
 </template>
-<script>
-</script>
+
 <script>
 export default {
   name: 'mainPage',
@@ -82,7 +80,7 @@ export default {
     }
   },
   watch: {
-    // 重定向路由 的作用是防止有人未登录就进入其他没有权限的页面
+    // 重定向路由 的作用是防止有人未登录就进入其他页面
     // $route: 'redirectRoute'
   },
   methods: {
@@ -92,9 +90,52 @@ export default {
       } else {
         this.$router.push('/')
       }
-    }
+    },
+ 
+    // 路由重定向
+    // redirectRoute() {
+    //   let currentPath = this.$router.currentRoute.path
+    //   switch (currentPath) {
+    //     case 'JsBase':
+    //       this.openNames = ['0']
+    //       this.$router.push('/JsBase')
+    //       this.activeNames = 'jsbase'
+    //       break
+    //     case '/circle':
+    //       this.openNames = ['1']
+    //       this.$router.push('/circle')
+    //       this.activeNames = 'circle'
+    //       break
+    //     case '/energyBar':
+    //       this.openNames = ['1']
+    //       this.$router.push('/energyBar')
+    //       this.activeNames = 'energyBar'
+    //       break
+    //     case '/Hex':
+    //       this.openNames = ['1']
+    //       this.$router.push('/Hex')
+    //       this.activeNames = 'Hex'
+    //       break
+    //     case '/echart':
+    //       this.openNames = ['1']
+    //       this.$router.push('/echart')
+    //       this.activeNames = 'echart'
+    //       break
+    //     case '/pie':
+    //       this.openNames = ['1']
+    //       this.$router.push('/pie')
+    //       this.activeNames = 'pie'
+    //   }
+    //   this.$nextTick(() => {
+    //     this.$refs.menu.updateOpened()
+    //     this.$refs.menu.updateActiveName()
+    //   })
+    // },
   },
-  mounted() {}
+  mounted() {
+    // this.redirectRoute()
+   
+  }
 }
 </script>
 
@@ -136,12 +177,6 @@ export default {
       width: calc(100% - 240px);
       left: 11%;
     }
-  }
-  .mybox {
-    width: 300px;
-    height: 300px;
-    border: 1px dashed #eee;
-    background-color: blue;
   }
 }
 </style>

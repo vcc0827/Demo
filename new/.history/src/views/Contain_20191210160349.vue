@@ -66,10 +66,12 @@
         <router-view></router-view>
       </div>
     </div>
-    <div></div>
+    <div class='filter-willow mybox'>test div</div>
   </div>
 </template>
 <script>
+// <link type='text/css' rel='styleSheet' href='../style/instagram.css'/>
+// <link type='text/css' rel='styleSheet' href='../style/instagram.min.css'/>
 </script>
 <script>
 export default {
@@ -137,10 +139,10 @@ export default {
       left: 11%;
     }
   }
-  .mybox {
-    width: 300px;
-    height: 300px;
-    border: 1px dashed #eee;
+  .mybox{
+    width:300px;
+    height:300px;
+    border:1px dashed #eee;
     background-color: blue;
   }
 }
