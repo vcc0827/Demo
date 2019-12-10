@@ -21,7 +21,7 @@
       <div v-for="itm of newsJson" :key="itm">
         <div>{{ itm.content }}</div>
       </div>
-      <br />
+      <br>
     </div>
     <div class="catch-netApi">
       <!-- 获取网上api -->
@@ -29,16 +29,6 @@
         <div>id:{{ itm2.id }}</div>
         <div>quantity:{{ itm2.quantity }}</div>
         <div>name:{{ itm2.name }}</div>
-      </div>
-      <!-- json格式转换 -->
-      <div>
-        json序列化 <br />
-        <p>JSON.stringify(value,replacer,space)</p>
-        <p>
-          value可以是对象、数组；replacer可选用于调整；space可选用于文本缩进换行等
-        </p>
-        json反序列化 <br />
-        <p>JSON.parse(text,[,reviver])</p>
       </div>
     </div>
   </div>
@@ -79,10 +69,7 @@ export default {
     }
   },
   mounted() {
-    this.loadPersonInfo(),
-      this.loadProducts(),
-      this.loadBooks(),
-      this.loadNews()
+    this.loadPersonInfo(), this.loadProducts(), this.loadBooks(),this.loadNews()
     // setInterval(() => {
     //   this.loadPersonInfo(), this.loadProducts(), this.loadBooks(),this.loadNews()
     // })
