@@ -45,19 +45,7 @@
         </p>
         json反序列化 <br />
         <p>JSON.parse(text,[,reviver])</p>
-        <p>
-          如果字符串里含有运算符，那么用 eval()不安全，它的结果是运算后的结果
-        </p>
-        <p>加速stringify的方法之定制化stringify:</p>
-        <p>
-          import faster from 'some_library_faster_stringify'; <br>
-          // 1.通过相应规则，定义你的对象结构 <br>
-          const theObjectScheme = { // …… }; <br>
-          //2. 根据结构，得到一个定制化的方法 <br>
-          const stringify = faster(theObjectScheme); <br>
-          // 3. 调用方法，快速 stringify <br>
-          const target = { // …… }; stringify(target);<br>
-        </p>
+        <p>如果字符串里含有运算符，那么用 eval()不安全，它的结果是运算后的结果</p>
       </div>
       <div>17 tue 8:00 <span>12.15</span></div>
       <div>17 mon 14:00 <span>12.16</span></div>

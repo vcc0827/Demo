@@ -37,29 +37,9 @@
         <p>
           value可以是对象、数组；replacer可选用于调整；space可选用于文本缩进换行等
         </p>
-        <p>
-          replacer:
-          如果该参数是一个函数，则在序列化过程中，被序列化的值的每个属性都会经过该函数的转换和处理；如果该参数是一个数组，则只有包含在这个数组中的属性名才会被序列化到最终的
-          JSON
-          字符串中；如果该参数为null或者未提供，则对象所有的属性都会被序列化
-        </p>
         json反序列化 <br />
         <p>JSON.parse(text,[,reviver])</p>
-        <p>
-          如果字符串里含有运算符，那么用 eval()不安全，它的结果是运算后的结果
-        </p>
-        <p>加速stringify的方法之定制化stringify:</p>
-        <p>
-          import faster from 'some_library_faster_stringify'; <br>
-          // 1.通过相应规则，定义你的对象结构 <br>
-          const theObjectScheme = { // …… }; <br>
-          //2. 根据结构，得到一个定制化的方法 <br>
-          const stringify = faster(theObjectScheme); <br>
-          // 3. 调用方法，快速 stringify <br>
-          const target = { // …… }; stringify(target);<br>
-        </p>
       </div>
-      <div>17 tue 8:00 <span>12.15</span></div>
       <div>17 mon 14:00 <span>12.16</span></div>
       <div>18 thu 10:00 <span>12.26</span></div>
     </div>
