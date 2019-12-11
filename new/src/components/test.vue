@@ -1,12 +1,15 @@
 <template>
   <div>
     <h2>测试页面</h2>
-    <div>
-      Generator函数生成斐波拉契数列（见console）
-      <p>
-        形式上，Generator
-        函数是一个普通函数，但是有两个特征。一是，function关键字与函数名之间有一个星号；二是，函数体内部使用yield表达式，定义不同的内部状态（yield在英语里的意思就是“产出”）。
-      </p>
+
+    <!-- 3d旋转效果 -->
+    <div class="animate">
+      <div class="point"></div>
+      <div class="box">
+        <div class="circle1"></div>
+      </div>
+      <div class="circle2"></div>
+      <div class="circle3"></div>
     </div>
   </div>
 </template>
@@ -15,48 +18,94 @@
 import $ from 'jquery'
 export default {
   data() {
-    return {
-      items: [1, 2, 3, 4, 5, 6],
-      msg: '<div>this is div</div>'
-    }
+    return {}
   },
-  methods: {
-    // 生成斐波拉契
-    async Fibonacci() {
-      function* fibs() {
-        let a = 0
-        let b = 1
-        while (true) {
-          yield a
-          ;[a, b] = [b, a + b]
-        }
-      }
-
-      let [first, second, third, fourth, fifth, sixth] = fibs()
-      console.log('Fibonacci: ', first, second, third, fourth, fifth, sixth)
-      console.log('执行结束！')
-    },
-    // 箭头函数this作用域例子
-    async Timer() {
-      console.log('箭头函数this作用域例子，需要3100ms')
-      this.s1 = 0
-      this.s2 = 0
-      setInterval(() => this.s1++, 1000)
-      setInterval(function() {
-        this.s2++
-      }, 1000)
-      setTimeout(() => console.log('s1: ', this.s1), 3100)
-      setTimeout(() => console.log('s2: ', this.s2), 3100)
-    }
-  },
-  mounted() {
-    this.Fibonacci(), this.Timer()
-  }
+  methods: {},
+  mounted() {}
 }
 </script>
-<style lang='less'>
+<style lang="less">
 p {
   width: 300px;
   overflow-wrap: break-word;
+}
+.animate {
+  width: 1000px;
+  height: 1000px;
+  position: relative;
+}
+// 自转
+.point {
+  position: absolute;
+  background: url(http://images2015.cnblogs.com/blog/818663/201510/818663-20151013205656257-1729257972.png)
+    0 0 no-repeat;
+  width: 100px;
+  height: 100px;
+  left: 600px;
+  top: 600px;
+  animation: rotationZ 5s linear infinite;
+}
+//公转
+.box {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0);
+  width: 50px;
+  height: 50px;
+  left: 700px;
+  top: 625px;
+  transform-origin: -50px 25px;
+  animation: rotationZ 2s linear infinite;
+}
+// 公转内部自转
+.circle1 {
+  background: url(http://images2015.cnblogs.com/blog/818663/201510/818663-20151013205828679-1300811025.png)
+    0 0 no-repeat;
+  width: 50px;
+  height: 50px;
+  left: 700px;
+  top: 625px;
+  animation: rotationZ 2s linear infinite;
+}
+// 绕Y轴旋转
+.circle2 {
+  position: absolute;
+  background: url(http://images2015.cnblogs.com/blog/818663/201510/818663-20151013205828679-1300811025.png)
+    0 0 no-repeat;
+  width: 50px;
+  height: 50px;
+  top: 625px;
+  left: 750px;
+  transform-origin: -100px 25px;
+  animation: rotationY 4s linear infinite;
+}
+// 绕X轴旋转
+.circle3 {
+  position: absolute;
+  background: url(http://images2015.cnblogs.com/blog/818663/201510/818663-20151013205828679-1300811025.png)
+    0 0 no-repeat;
+  width: 50px;
+  height: 50px;
+  top: 500px;
+  left: 625px;
+  transform-origin: -150px 150px;
+  animation: rotationX 5.5s linear infinite;
+}
+// 绕Z轴旋转
+@keyframes rotationZ{
+  to {
+    transform: rotate(360deg);
+  }
+}
+// 绕Y轴旋转
+@keyframes rotationY {
+  to {
+    transform: rotateY(360deg);
+  }
+}
+// 绕X轴旋转
+@keyframes rotationX {
+  to {
+    transform: rotateX(360deg);
+  }
 }
 </style>
