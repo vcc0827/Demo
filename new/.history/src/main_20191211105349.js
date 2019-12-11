@@ -10,6 +10,8 @@ import axios from 'axios'
 import ViewUI from 'view-design'
 import 'view-design/dist/styles/iview.css'
 import VueRouter from 'vue-router'
+import OwUI from 'overwatch-ui'
+import 'overwatch-ui/dist/overwatch-ui.css'
 
 window.axios = require('axios')
 
@@ -17,6 +19,7 @@ window.axios = require('axios')
 Vue.prototype.$echarts = echarts
 Vue.config.productionTip = false
 Vue.prototype.axios = axios
+Vue.use(OwUI.plugins.$owAlert)
 Vue.use(Echarts)
 Vue.use(ViewUI)
 
@@ -39,5 +42,6 @@ VueRouter.prototype.push = function push(location) {
 new Vue({
   router,
   store,
+  OwUI,
   render: h => h(App)
 }).$mount('#app')

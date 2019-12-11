@@ -54,7 +54,7 @@ export default {
   }
 }
 </script>
-<style lang='less'>
+<style scoped>
 p {
   width: 300px;
   overflow-wrap: break-word;

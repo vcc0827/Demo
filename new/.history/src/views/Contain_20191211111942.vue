@@ -66,6 +66,19 @@
         <router-view></router-view>
       </div>
     </div>
+    <div>
+      <ow-button type="info">Info</ow-button>
+      <ow-button type="primary">Primary</ow-button>
+      <ow-button type="success">Success</ow-button>
+      <ow-button type="warning">Warning</ow-button>
+      <ow-button type="danger">Danger</ow-button>
+      <ow-popover position="top">
+        <template slot="content">
+          <div>Hello, Overwatch UI!</div>
+        </template>
+        <ow-button>Pop It!</ow-button>
+      </ow-popover>
+    </div>
   </div>
 </template>
 <script></script>

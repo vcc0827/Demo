@@ -66,9 +66,11 @@
         <router-view></router-view>
       </div>
     </div>
+    <div class="overwatch"></div>
   </div>
 </template>
-<script></script>
+<script>
+</script>
 <script>
 export default {
   name: 'mainPage',

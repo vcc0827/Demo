@@ -47,16 +47,16 @@ export default {
       }, 1000)
       setTimeout(() => console.log('s1: ', this.s1), 3100)
       setTimeout(() => console.log('s2: ', this.s2), 3100)
-    }
+    },
   },
   mounted() {
     this.Fibonacci(), this.Timer()
   }
 }
 </script>
-<style lang='less'>
-p {
-  width: 300px;
-  overflow-wrap: break-word;
+<style scoped>
+p{
+  width:300px;
+overflow-wrap: break-word;
 }
 </style>

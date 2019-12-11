@@ -1,4 +1,3 @@
-// 接口声明
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
@@ -13,10 +12,10 @@ import VueRouter from 'vue-router'
 
 window.axios = require('axios')
 
-// 使用插件
 Vue.prototype.$echarts = echarts
 Vue.config.productionTip = false
 Vue.prototype.axios = axios
+
 Vue.use(Echarts)
 Vue.use(ViewUI)
 
@@ -35,7 +34,6 @@ const routerPush = VueRouter.prototype.push
 VueRouter.prototype.push = function push(location) {
   return routerPush.call(this, location).catch(error=> error)
 }
-// 注册实例
 new Vue({
   router,
   store,

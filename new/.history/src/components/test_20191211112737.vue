@@ -33,7 +33,7 @@ export default {
       }
 
       let [first, second, third, fourth, fifth, sixth] = fibs()
-      console.log('Fibonacci: ', first, second, third, fourth, fifth, sixth)
+      console.log('12345th', first, second, third, fourth, fifth, sixth)
       console.log('执行结束！')
     },
     // 箭头函数this作用域例子
@@ -47,16 +47,11 @@ export default {
       }, 1000)
       setTimeout(() => console.log('s1: ', this.s1), 3100)
       setTimeout(() => console.log('s2: ', this.s2), 3100)
-    }
+    },
   },
   mounted() {
     this.Fibonacci(), this.Timer()
   }
 }
 </script>
-<style lang='less'>
-p {
-  width: 300px;
-  overflow-wrap: break-word;
-}
-</style>
+<style scoped></style>

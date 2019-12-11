@@ -39,5 +39,6 @@ VueRouter.prototype.push = function push(location) {
 new Vue({
   router,
   store,
+  OwUI,
   render: h => h(App)
 }).$mount('#app')
