@@ -1,45 +1,21 @@
 <template>
-  <div class="body">
-    <h2>TestPage</h2>
-    <p>3d transform ↓</p>
+  <div>
+    <h2>测试页面</h2>
+
+    <!-- 3d旋转效果 -->
     <div class="animate">
-      <div class="point">自转</div>
+      <div class="point"></div>
       <div class="box">
-        <div class="circle1">自转+公转</div>
+        <div class="circle1"></div>
       </div>
-      <div class="circle2">绕Y轴</div>
-      <div class="circle3">绕X轴</div>
+      <div class="circle2"></div>
+      <div class="circle3"></div>
     </div>
   </div>
 </template>
 
-<script>
-import $ from 'jquery'
-export default {
-  data() {
-    return {}
-  },
-  methods: {},
-  mounted() {}
-}
-</script>
-<style lang="less" scoped>
-.body {
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  color: var(--gray90);
-  font-family: 'Lato', sans-serif;
-  font-size: 1.5rem;
-  line-height: 1.6em;
-  font-weight: 400;
-  font-style: normal;
-  letter-spacing: 0;
-  text-rendering: optimizeLegibility;
-  background: rgb(199, 237, 204);
-  -webkit-font-smoothing: antialiased;
-  color: #0a0a23;
-}
+<script></script>
+<style lang="less">
 p {
   width: 300px;
   overflow-wrap: break-word;
@@ -48,6 +24,7 @@ p {
   width: 1000px;
   height: 1000px;
   position: relative;
+  background-color: #000;
 }
 // 自转
 .point {
@@ -58,7 +35,7 @@ p {
   height: 100px;
   left: 600px;
   top: 600px;
-  animation: rotationZ 8s linear infinite;
+  animation: rotationZ 5s linear infinite;
 }
 //公转
 .box {
@@ -69,7 +46,7 @@ p {
   left: 700px;
   top: 625px;
   transform-origin: -50px 25px;
-  animation: rotationZ 5s linear infinite;
+  animation: rotationZ 2s linear infinite;
 }
 // 公转内部自转
 .circle1 {
@@ -79,7 +56,7 @@ p {
   height: 50px;
   left: 700px;
   top: 625px;
-  animation: rotationZ 5s linear infinite;
+  animation: rotationZ 2s linear infinite;
 }
 // 绕Y轴旋转
 .circle2 {
@@ -91,7 +68,7 @@ p {
   top: 625px;
   left: 750px;
   transform-origin: -100px 25px;
-  animation: rotationY 7s linear infinite;
+  animation: rotationY 4s linear infinite;
 }
 // 绕X轴旋转
 .circle3 {

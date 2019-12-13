@@ -16,10 +16,16 @@ export default new Router({
           component: resolve => require(['./components/JsBase.vue'], resolve)
         },
         {
+          path: '/bar',
+          name: 'bar',
+          component: resolve =>
+            require(['./components/Echarts/Bar/bar.vue'], resolve)
+        },
+        {
           path: '/energy',
           name: 'energy',
           component: resolve =>
-            require(['./components/Echarts/EnergyBar/energyBar.vue'], resolve)
+            require(['./components/Echarts/Bar/energyBar.vue'], resolve)
         },
         {
           path: '/circle',

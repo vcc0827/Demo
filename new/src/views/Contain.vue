@@ -1,8 +1,8 @@
 <template>
   <div class="main-page">
     <div class="main-top">
-      <div style="color:white;font-size:26px;text-algin:center;">
-        第三套中小学生前端例题
+      <div class="titles">
+        3rd web development
       </div>
     </div>
     <div class="main-bottom">
@@ -34,7 +34,7 @@
               Echarts
             </template>
             <MenuItem name="">line</MenuItem>
-            <MenuItem name="energy">bar</MenuItem>
+            <MenuItem name="bar">bar</MenuItem>
             <MenuItem name="circle">pie</MenuItem>
             <MenuItem name="pie">3dpie</MenuItem>
             <MenuItem name="Hex">radar</MenuItem>
@@ -97,15 +97,63 @@ export default {
 </script>
 
 <style lang="less" scoped>
+// 调色盘
+.colorPlates {
+  // group 1
+  color: #19caad;
+  color: #8cc7b5;
+  color: #a0eee1;
+  color: #bee7e9;
+  color: #beedc7;
+  color: #d6d5b7;
+  color: #d1ba74;
+  color: #e6ceac;
+  color: #ecad9e;
+  color: #f4606c;
+  // group 2
+  color: #2ae0c8;
+  color: #a2e1d4;
+  color: #acf6ef;
+  color: #cbf5fb;
+  color: #bdf3d4;
+  color: #e6e2c3;
+  color: #e3c887;
+  color: #fad8be;
+  color: #fbb8ac;
+  color: #fe6673;
+  //group3 backgroundColor ↓
+  color: #eaeaef;
+  color: #e9ebfe;
+  color: #dce2f1;
+  color: #e3edcd;
+  color: #fde6e0;
+  color: #fff2e2;
+}
+
 .main-page {
   width: 1920px;
   height: 1080px;
   overflow-y: auto;
   background-color: #ccc;
+  overflow-x: hidden;
+  color: var(--gray90);
+  font-family: 'Lato', sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.6em;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  text-rendering: optimizeLegibility;
+  // background: #fff;
   .main-top {
     width: 100%;
     height: 10%;
     background-color: #ddd;
+    .titles {
+      color: white;
+      font-size: 26px;
+      text-align: center;
+    }
   }
   .main-bottom {
     width: 100%;
@@ -115,14 +163,14 @@ export default {
     justify-content: space-between;
     background-color: #fff;
     .main-left {
-      width: 10%;
+      width: 14%;
       height: 100%;
       background-color: #ddd;
     }
     .main-right {
       position: absolute;
       width: 88%;
-      height: 88%;
+      height: 68%;
       left: 11%;
       background-color: #eee;
     }
