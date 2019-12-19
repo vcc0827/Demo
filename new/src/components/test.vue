@@ -17,13 +17,22 @@
 import $ from 'jquery'
 export default {
   data() {
-    return {}
+    return {
+      i: 0
+    }
   },
-  methods: {},
-  mounted() {}
+  methods: {
+   
+  },
+  mounted() {
+    
+  }
 }
 </script>
 <style lang="less" scoped>
+// animation: name duration timing-function delay iteration-count direction fill-mode play-state;
+// 动画参数：名称 完成所需时间 如何完成一个周期 启动前延迟 次数 是否反向  不播放时样式  是否在播放
+
 .body {
   width: 100%;
   height: 100%;
@@ -59,6 +68,7 @@ p {
   left: 600px;
   top: 600px;
   animation: rotationZ 8s linear infinite;
+  animation-play-state: running;
 }
 //公转
 .box {
@@ -79,7 +89,7 @@ p {
   height: 50px;
   left: 700px;
   top: 625px;
-  animation: rotationZ 5s linear infinite;
+  animation: rotationZ 2s linear infinite;
 }
 // 绕Y轴旋转
 .circle2 {
@@ -91,8 +101,11 @@ p {
   top: 625px;
   left: 750px;
   transform-origin: -100px 25px;
-  animation: rotationY 7s linear infinite;
+  animation: rotationY 2s linear 3;
+  animation-delay: 0s;
+  animation-direction: alternate;
 }
+
 // 绕X轴旋转
 .circle3 {
   position: absolute;
@@ -121,6 +134,12 @@ p {
 @keyframes rotationX {
   to {
     transform: rotateX(360deg);
+  }
+}
+
+@keyframes turnY {
+  to {
+    transform: rotateY(180deg);
   }
 }
 </style>

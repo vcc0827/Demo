@@ -17,7 +17,7 @@ export default {
   methods: {
     Barchart() {
       let xdata = ['mon', 'tue', 'wes', 'thu', 'fri']
-      let sdata = [100,200,300,200,100]
+      let sdata = [100, 200, 300, 200, 100]
       this.option = {
         //  背景色
         backgroundColor: '#eaeaef',
@@ -34,9 +34,9 @@ export default {
           ' #ecad9e',
           ' #f4606c'
         ],
-        // 工具提示
+        // 提示信息
         tooltip: { trigger: 'axis' },
-        // 位置grid
+        // 位置
         grid: {
           left: '5%',
           right: '5%',
@@ -45,7 +45,7 @@ export default {
           containLabel: true
         },
         // 标题
-        title: { text: 'barChart',textStyle:{} },
+        title: { text: 'barChart', textStyle: {} },
         // 图例
         legend: {
           data: ['10', '20', '30'],
@@ -72,8 +72,10 @@ export default {
           }
         ],
         // 系列
-        series: [{ type: 'bar', barWidth: '10%',data:sdata }]
+        series: [{ type: 'bar', barWidth: '10%', data: sdata }]
       }
+
+      
     }
   },
   mounted() {
@@ -84,7 +86,7 @@ export default {
 <style lang="less">
 .BarChart {
   margin-left: 200px;
-  margin-top:300px;
+  margin-top: 300px;
   width: 600px;
   height: 400px;
   .bar {

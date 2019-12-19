@@ -70,6 +70,7 @@ p {
   left: 750px;
   transform-origin: -100px 25px;
   animation: rotationY 4s linear infinite;
+  animation-play-state: paused;
 }
 // 绕X轴旋转
 .circle3 {

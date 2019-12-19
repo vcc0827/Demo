@@ -60,18 +60,27 @@ export default new Router({
         },
       ]
     },
-
     {
       path: '/jsons',
       name: 'jsons',
       component: resolve => require(['./components/Jsons/jsons.vue'], resolve)
     },
-
+    {
+      path:'/delayTransform',
+      name:'/delayTransform',
+      component: resolve => require(['./components/CSS3/delayTransform.vue'], resolve)
+    },
     {
       path: '/test',
       name: 'test',
       component: resolve => require(['./components/test.vue'], resolve)
     },
+    {
+      path: '/test1',
+      name: 'test1',
+      component: resolve => require(['./components/test1.vue'], resolve)
+    },
+
     {
       path: '/regist',
       name: 'regist',
