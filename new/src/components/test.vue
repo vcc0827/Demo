@@ -1,145 +1,186 @@
 <template>
-  <div class="body">
-    <h2>TestPage</h2>
-    <p>3d transform ↓</p>
-    <div class="animate">
-      <div class="point">自转</div>
-      <div class="box">
-        <div class="circle1">自转+公转</div>
-      </div>
-      <div class="circle2">绕Y轴</div>
-      <div class="circle3">绕X轴</div>
-    </div>
+<div class="loading">
+  <div class='loading-anim'>
+    <div class='border out'></div>
+    <div class='border in'></div>
+    <div class='border in2'></div>
+    <div class='border mid'></div>
+    <div class="titles">123</div>
   </div>
+</div>
+ 
 </template>
 
 <script>
 import $ from 'jquery'
 export default {
   data() {
-    return {
-      i: 0
-    }
+    return {}
   },
-  methods: {
-   
-  },
-  mounted() {
-    
-  }
+  methods: {},
+  mounted() {}
 }
 </script>
-<style lang="less" scoped>
-// animation: name duration timing-function delay iteration-count direction fill-mode play-state;
-// 动画参数：名称 完成所需时间 如何完成一个周期 启动前延迟 次数 是否反向  不播放时样式  是否在播放
+<style>
+button, input, select, textarea {
+  /* I want my default button style back */
+  font-size: 90%;
+}
 
-.body {
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: url(https://www.toptal.com/designers/subtlepatterns/patterns/furley_bg_@2X.png);
+  background-size: 600px 600px;
+}
+
+.container {
+  margin: 20px;
+  width: calc(100% - 40px);
+  height: auto;
+}
+
+button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
-  color: var(--gray90);
-  font-family: 'Lato', sans-serif;
-  font-size: 1.5rem;
-  line-height: 1.6em;
-  font-weight: 400;
-  font-style: normal;
-  letter-spacing: 0;
-  text-rendering: optimizeLegibility;
-  background: rgb(199, 237, 204);
-  -webkit-font-smoothing: antialiased;
-  color: #0a0a23;
-}
-p {
-  width: 300px;
-  overflow-wrap: break-word;
-}
-.animate {
-  width: 1000px;
-  height: 1000px;
-  position: relative;
-}
-// 自转
-.point {
-  position: absolute;
-  background: url(http://images2015.cnblogs.com/blog/818663/201510/818663-20151013205656257-1729257972.png)
-    0 0 no-repeat;
-  width: 100px;
-  height: 100px;
-  left: 600px;
-  top: 600px;
-  animation: rotationZ 8s linear infinite;
-  animation-play-state: running;
-}
-//公转
-.box {
-  position: absolute;
   background-color: rgba(255, 255, 255, 0);
-  width: 50px;
-  height: 50px;
-  left: 700px;
-  top: 625px;
-  transform-origin: -50px 25px;
-  animation: rotationZ 5s linear infinite;
-}
-// 公转内部自转
-.circle1 {
-  background: url(http://images2015.cnblogs.com/blog/818663/201510/818663-20151013205828679-1300811025.png)
-    0 0 no-repeat;
-  width: 50px;
-  height: 50px;
-  left: 700px;
-  top: 625px;
-  animation: rotationZ 2s linear infinite;
-}
-// 绕Y轴旋转
-.circle2 {
-  position: absolute;
-  background: url(http://images2015.cnblogs.com/blog/818663/201510/818663-20151013205828679-1300811025.png)
-    0 0 no-repeat;
-  width: 50px;
-  height: 50px;
-  top: 625px;
-  left: 750px;
-  transform-origin: -100px 25px;
-  animation: rotationY 2s linear 3;
-  animation-delay: 0s;
-  animation-direction: alternate;
+  transition: background-color .2s ease-out;
 }
 
-// 绕X轴旋转
-.circle3 {
-  position: absolute;
-  background: url(http://images2015.cnblogs.com/blog/818663/201510/818663-20151013205828679-1300811025.png)
-    0 0 no-repeat;
-  width: 50px;
-  height: 50px;
-  top: 500px;
-  left: 625px;
-  transform-origin: -150px 150px;
-  animation: rotationX 5.5s linear infinite;
+.loading-anim {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  perspective: 800px;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px) rotateY(-90deg) rotateX(90deg) rotateZ(90deg) scale(0.5);
+  opacity: 0;
+  transition: all .2s ease-out;
 }
-// 绕Z轴旋转
-@keyframes rotationZ {
+.loading-anim .circle {
+  width: 100%;
+  height: 100%;
+  animation: spin 5s linear infinite;
+}
+.loading-anim .border {
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid #25f2f4;
+}
+.loading-anim .out {
+  top: 18%;
+  left: 18%;
+  width: 65%;
+  height: 65%;
+  background-color: rgb(3,23,73,0.5);
+  border: 8px solid #25f2f4;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  animation: spin 2s linear infinite;
+}
+.loading-anim .in {
+  top: 24%;
+  left: 24%;
+  width: 50%;
+  height: 50%;
+  border: 2px solid #25f2f4;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  animation: spin 2s linear infinite;
+}
+.loading-anim .in2 {
+  top: 24%;
+  left: 24%;
+  width: 50%;
+  height: 50%;
+  border: 2px solid #25f2f4;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  animation: spin2 2s linear infinite;
+}
+.loading-anim .mid {
+  top: 30%;
+  left: 30%;
+  width: 40%;
+  height: 40%;
+  border: 1px solid #25f2f4;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+.loading .loading-anim {
+  transform: translateZ(0) rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1);
+  opacity: 1;
+}
+
+.loading .loading-overlay {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
   to {
     transform: rotate(360deg);
   }
 }
-// 绕Y轴旋转
-@keyframes rotationY {
-  to {
-    transform: rotateY(360deg);
+@keyframes spin2 {
+  from {
+    transform: rotate(360deg);
   }
-}
-// 绕X轴旋转
-@keyframes rotationX {
   to {
-    transform: rotateX(360deg);
+    transform: rotate(0deg);
   }
 }
 
-@keyframes turnY {
-  to {
-    transform: rotateY(180deg);
+
+@keyframes jitter {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.7, 0.7);
+  }
+  50% {
+    transform: scale(1, 1);
+  }
+  75% {
+    transform: scale(1.3, 1.3);
+  }
+  100% {
+    transform: scale(1, 1);
   }
 }
+@keyframes fade-in-out {
+  0% {
+    opacity: 0.8;
+  }
+  25% {
+    opacity: 0.2;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
 </style>
