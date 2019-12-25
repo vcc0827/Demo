@@ -80,7 +80,11 @@ export default new Router({
       name: 'test1',
       component: resolve => require(['./components/test1.vue'], resolve)
     },
-
+    {
+      path: '/numberRain',
+      name: 'numberRain',
+      component: resolve => require(['./components/numberRain.vue'], resolve)
+    },
     {
       path: '/regist',
       name: 'regist',

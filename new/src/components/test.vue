@@ -110,7 +110,7 @@ button {
   border-top-color: transparent;
   border-left-color: transparent;
   border-bottom-color: transparent;
-  animation: spin2 2s linear infinite;
+  animation: spin 2s linear infinite;
 }
 .loading-anim .mid {
   top: 30%;

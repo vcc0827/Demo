@@ -1,10 +1,10 @@
 <template>
   <div class="body">
     <div>
-      <canvas class="cans">test canvas</canvas>
+      <canvas class="cans"></canvas>
     </div>
     <div>
-      <div class="count"></div>
+      <div class="count">奥利给！g~iao!</div>
     </div>
   </div>
 </template>
@@ -23,7 +23,7 @@ export default {
       var cw = mcan.width
       var ch = mcan.height
       var content = '0156789zxcvbnmlkjhgfdsaqwertyuiop234'
-      var fontSize = 16
+      var fontSize = 5
       ctx.font = fontSize + 'px \'微软雅黑\''
       //    一层有显示多少，当前canvas的宽度/文字的宽度
       var countValue = []
@@ -44,7 +44,7 @@ export default {
         for (var a = 0; a < count; a++) {
           ctx.textBaseline = 'top'
           //  改变数字颜色
-          ctx.fillStyle = '#053a62'
+          ctx.fillStyle = '#25f2f4'
           //获取随机值
           var ranFloat = Math.random() * content.length //小数
           var ranValue = content[Math.floor(ranFloat)]
@@ -74,10 +74,24 @@ export default {
   padding: 0;
   width: 1920px;
   height: 1000px;
+ 
+
 }
 .cans {
-  width: 1000px;
-  height: 632px;
+  width: 1920px;
+  height: 1080px;
   border: 1px solid #000;
+  z-index: -1;
+}
+.count{
+  width:300px;
+  height:300px;
+  background-color: transparent;
+  position: absolute;
+  color:white;
+  font-size: 36px;
+  left:50%;
+  top:50%;
+  
 }
 </style>
