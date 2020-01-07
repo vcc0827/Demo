@@ -1,28 +1,98 @@
 <template>
-<div class="loading">
-  <div class='loading-anim'>
-    <div class='border out'></div>
-    <div class='border in'></div>
-    <div class='border in2'></div>
-    <div class='border mid'></div>
-    <div class="titles">123</div>
+  <div class="loading">
+    <div class="loading-anim">
+      <div class="border out"></div>
+      <div class="border in"></div>
+      <div class="border in2"></div>
+      <div class="border mid"></div>
+      <div class="titles">123</div>
+    </div>
+    <div class="loading-hex">
+      <div id="hex" class="hexBox">
+        <span class="hex"
+          ><span class="hexIn"
+            ><img src="../assets/logo.png" width="50px" height="auto"/></span
+        ></span>
+      </div>
+    </div>
   </div>
-</div>
- 
 </template>
 
 <script>
 import $ from 'jquery'
 export default {
   data() {
-    return {}
+    return {
+      nameList: [
+        { name: 'jojo' },
+        { name: 'ko' },
+        { name: 'no' },
+        { name: 'dio' },
+        { name: 'da!' },
+        { name: 'ola' },
+        { name: 'ola' },
+        { name: 'ola' },
+        { name: 'ola' },
+        { name: 'ola' },
+        { name: 'ola' },
+        { name: 'ola' }
+      ],
+     count:0
+    }
   },
-  methods: {},
-  mounted() {}
+  methods: {
+    addHex() {
+      setInterval(()=>{
+        $('.loading-hex').prepend(
+          '<div class="hexBox"><span class="hex"><span class="hexIn">' +
+            this.nameList[this.count++].name +
+            '</span></span></div>'
+        )
+      },1000)
+     
+    },
+  },
+  mounted() {
+    this.addHex()
+  }
 }
 </script>
 <style>
-button, input, select, textarea {
+.loading-hex {
+  width: 1000px;
+  height: 550px;
+  border: 1px red solid;
+  /* text-align: center; */
+  margin: auto;
+  /* display: flex; */
+}
+.hexBox {
+  width: 100px;
+  height: 116px;
+  margin: 10px 10px 10px 10px;
+  display: inline-block;
+}
+.hex {
+  overflow: hidden;
+  display: block;
+  width: 100px;
+  height: 116px;
+  transform: rotate(-60deg) skewY(30deg);
+}
+.hexIn {
+  background-color: #ccc;
+  display: block;
+  width: 100px;
+  height: 116px;
+  line-height: 116px;
+  text-align: center;
+  transform: skewY(-30deg) rotate(60deg);
+}
+
+button,
+input,
+select,
+textarea {
   /* I want my default button style back */
   font-size: 90%;
 }
@@ -55,7 +125,7 @@ button {
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0);
-  transition: background-color .2s ease-out;
+  transition: background-color 0.2s ease-out;
 }
 
 .loading-anim {
@@ -65,9 +135,10 @@ button {
   margin: auto;
   perspective: 800px;
   transform-style: preserve-3d;
-  transform: translateZ(-100px) rotateY(-90deg) rotateX(90deg) rotateZ(90deg) scale(0.5);
+  transform: translateZ(-100px) rotateY(-90deg) rotateX(90deg) rotateZ(90deg)
+    scale(0.5);
   opacity: 0;
-  transition: all .2s ease-out;
+  transition: all 0.2s ease-out;
 }
 .loading-anim .circle {
   width: 100%;
@@ -84,7 +155,7 @@ button {
   left: 18%;
   width: 65%;
   height: 65%;
-  background-color: rgb(3,23,73,0.5);
+  background-color: rgb(3, 23, 73, 0.5);
   border: 8px solid #25f2f4;
   border-top-color: transparent;
   border-bottom-color: transparent;
@@ -132,7 +203,6 @@ button {
   background: rgba(255, 255, 255, 0.5);
 }
 
-
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -149,7 +219,6 @@ button {
     transform: rotate(0deg);
   }
 }
-
 
 @keyframes jitter {
   0% {
@@ -182,5 +251,4 @@ button {
     opacity: 0.8;
   }
 }
-
 </style>
